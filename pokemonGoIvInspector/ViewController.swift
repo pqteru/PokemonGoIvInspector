@@ -21,7 +21,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
     var resultsTableController: PokeSearchResultsController!
     
     var pokemons: [PKMPokemon]?
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -50,13 +50,13 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
         
         getPokemons()
     }
-
+    
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - UITableViewDelegate
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,15 +110,15 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         // Update the filtered array based on the search text.
         
-//        let searchResults = pokemons
-//        let searchString = searchController.searchBar.text
-//        
-//        let predicate = NSPredicate(format: "SELF CONTAINS[cd] %@", searchString!)
-//        let filteredResults = searchResults.filter { predicate.evaluateWithObject($0) }
-//        
-//        let resultsController = searchController.searchResultsController as! PokeSearchResultsController
-//        resultsController.filteredCountries = filteredResults
-//        resultsController.tableView.reloadData()
+        //        let searchResults = pokemons
+        //        let searchString = searchController.searchBar.text
+        //
+        //        let predicate = NSPredicate(format: "SELF CONTAINS[cd] %@", searchString!)
+        //        let filteredResults = searchResults.filter { predicate.evaluateWithObject($0) }
+        //
+        //        let resultsController = searchController.searchResultsController as! PokeSearchResultsController
+        //        resultsController.filteredCountries = filteredResults
+        //        resultsController.tableView.reloadData()
     }
     
     // MARK: - Tester
@@ -128,23 +128,18 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
         PokemonKit.fetchBerry("1")
             .then { berryInfo in
                 //self.testLabel.text = berryInfo.name;
-                log.debug("berryInfo: \(berryInfo)");
+                log.debug("berryInfo: \(berryInfo)")
                 
-            }.error {error in
+            }.onError {error in
                 print(error)
         }
         
         PokemonKit.fetchPokemons()
             .then { mons in
                 log.debug("mons: \(mons)")
-            }.error { error in
-                print(error)
-        }
-        
-        PokemonKit.fetchPokemon("1")
-            .then { pokemonInfo in
-                log.debug("pokemonInfo: \(pokemonInfo.name)")
-            }.error {error in
+                let results = mons.results
+                
+            }.onError { error in
                 print(error)
         }
     }
@@ -152,6 +147,6 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
     func getPokemons() {
         
     }
-
+    
 }
 

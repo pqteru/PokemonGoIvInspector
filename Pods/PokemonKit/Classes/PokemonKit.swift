@@ -10,9 +10,6 @@ import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
-
-import PromiseKit
-
 // MARK: Constant
 
 let baseURL: String = "http://pokeapi.co/api/v2"

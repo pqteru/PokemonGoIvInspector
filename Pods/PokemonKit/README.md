@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/cocoapods/v/PokemonKit.svg?style=flat)](http://cocoapods.org/pods/PokemonKit)
 [![License](https://img.shields.io/cocoapods/l/PokemonKit.svg?style=flat)](http://cocoapods.org/pods/PokemonKit)
 [![Platform](https://img.shields.io/cocoapods/p/PokemonKit.svg?style=flat)](http://cocoapods.org/pods/PokemonKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![codebeat badge](https://codebeat.co/badges/8394f59e-c142-4477-b535-3d0b58007f78)](https://codebeat.co/projects/github-com-continuouslearning-pokemonkit)
 
 ## What is this?
 PokemonKit is a swift wrapper for Pokeapi. 
@@ -18,7 +20,7 @@ import PokemonKit
 PokemonKit.fetchBerry("1")
             .then { berryInfo in
                 self.testLabel.text = berryInfo.name;
-            }.error {error in
+            }.onError {error in
                 print(error)
         }
 ```
@@ -26,8 +28,11 @@ PokemonKit.fetchBerry("1")
 ## TODO
 
 - [x] Wrap all API end points
-- [ ] Fully Documented (In progress: 17% documented)
+- [x] Fully [Documented](http://continuouslearning.github.io/PokemonKit/)
 - [ ] Fully tested
+- [x] Carthage Support
+- [ ] Unit test don't call server
+- [x] Remove PromiseKit (So many build errors, not worth it)
 
 ## Installation
 
@@ -36,6 +41,12 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'PokemonKit'
+```
+
+If your using Carthage you can add a PokemonKit by adding it to your Cartfile:
+
+```ruby
+github "ContinuousLearning/PokemonKit" ~> 2.0
 ```
 
 In your Info.plist, add
@@ -64,7 +75,4 @@ Yeung Yiu Hung, hkclex@gmail.com
 ## License
 
 PokemonKit is available under the MIT license. See the LICENSE file for more info.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ContinuousLearning/pokemonkit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

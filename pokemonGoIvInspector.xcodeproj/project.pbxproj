@@ -16,6 +16,7 @@
 		8BF0EC031D5873B600E6B29A /* pokemonGoIvInspectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC021D5873B600E6B29A /* pokemonGoIvInspectorTests.swift */; };
 		8BF0EC0E1D5873B600E6B29A /* pokemonGoIvInspectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC0D1D5873B600E6B29A /* pokemonGoIvInspectorUITests.swift */; };
 		8BF0EC221D58818A00E6B29A /* PokeSearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */; };
+		8BF0EC241D598BBF00E6B29A /* PokeIvCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC231D598BBF00E6B29A /* PokeIvCalculatorController.swift */; };
 		C1363EFDD5F531A6F1386976 /* Pods_pokemonGoIvInspector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947066D23659E1330A841126 /* Pods_pokemonGoIvInspector.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		8BF0EC0D1D5873B600E6B29A /* pokemonGoIvInspectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonGoIvInspectorUITests.swift; sourceTree = "<group>"; };
 		8BF0EC0F1D5873B600E6B29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeSearchResultsController.swift; sourceTree = "<group>"; };
+		8BF0EC231D598BBF00E6B29A /* PokeIvCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeIvCalculatorController.swift; sourceTree = "<group>"; };
 		947066D23659E1330A841126 /* Pods_pokemonGoIvInspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokemonGoIvInspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 			children = (
 				8BF0EBEC1D5873B600E6B29A /* ViewController.swift */,
 				8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */,
+				8BF0EC231D598BBF00E6B29A /* PokeIvCalculatorController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			files = (
 				8BF0EBED1D5873B600E6B29A /* ViewController.swift in Sources */,
 				8BF0EC221D58818A00E6B29A /* PokeSearchResultsController.swift in Sources */,
+				8BF0EC241D598BBF00E6B29A /* PokeIvCalculatorController.swift in Sources */,
 				8BF0EBF31D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld in Sources */,
 				8BF0EBEB1D5873B600E6B29A /* AppDelegate.swift in Sources */,
 			);

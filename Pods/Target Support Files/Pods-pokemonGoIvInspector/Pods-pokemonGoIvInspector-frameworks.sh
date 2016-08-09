@@ -88,10 +88,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-pokemonGoIvInspector/AlamofireImage.framework"
   install_framework "Pods-pokemonGoIvInspector/AlamofireNetworkActivityIndicator.framework"
   install_framework "Pods-pokemonGoIvInspector/AlamofireObjectMapper.framework"
-  install_framework "Pods-pokemonGoIvInspector/OMGHTTPURLRQ.framework"
   install_framework "Pods-pokemonGoIvInspector/ObjectMapper.framework"
   install_framework "Pods-pokemonGoIvInspector/PokemonKit.framework"
-  install_framework "Pods-pokemonGoIvInspector/PromiseKit.framework"
   install_framework "Pods-pokemonGoIvInspector/XCGLogger.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -99,9 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-pokemonGoIvInspector/AlamofireImage.framework"
   install_framework "Pods-pokemonGoIvInspector/AlamofireNetworkActivityIndicator.framework"
   install_framework "Pods-pokemonGoIvInspector/AlamofireObjectMapper.framework"
-  install_framework "Pods-pokemonGoIvInspector/OMGHTTPURLRQ.framework"
   install_framework "Pods-pokemonGoIvInspector/ObjectMapper.framework"
   install_framework "Pods-pokemonGoIvInspector/PokemonKit.framework"
-  install_framework "Pods-pokemonGoIvInspector/PromiseKit.framework"
   install_framework "Pods-pokemonGoIvInspector/XCGLogger.framework"
 fi

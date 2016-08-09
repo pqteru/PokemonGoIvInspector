@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>OMGHTTPURLRQ.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,17 +34,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PokemonKit-PokemonKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>PokemonKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PromiseKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,27 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1011EFCB0A7D2717142017826245F9A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>190ACD3A51BC90B85EADB13E9CDD207B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>228FFC4E78F899B58C33C57F31513A8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E55B5B0477BF8CFE69B6E9E7FA88D9D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>612F12BD0910F92D9FD0E3B91F57F1BE</key>
+		<key>598CEDF891B3FADD7C0E9904584AA328</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E5737BBAB29B1A84D84C9010409AF0D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B3C8B487F3E72280E5B32BFF538D1080</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C5CBCAA97E951CC882334464FBDF983D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC810767E5555C9597675D0D2A4538DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DAE82DDB75EF7B6DCB0A2185BB001C7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
