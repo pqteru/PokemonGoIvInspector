@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B9C81CE1D5B0A61005739EF /* Pokemons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81CD1D5B0A61005739EF /* Pokemons.swift */; };
+		8B9C81D01D5B1248005739EF /* PkmsAutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81CF1D5B1248005739EF /* PkmsAutoCompleteView.swift */; };
 		8BF0EBEB1D5873B600E6B29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EBEA1D5873B600E6B29A /* AppDelegate.swift */; };
 		8BF0EBED1D5873B600E6B29A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EBEC1D5873B600E6B29A /* ViewController.swift */; };
 		8BF0EBF01D5873B600E6B29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0EBEE1D5873B600E6B29A /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0DC4D4A7954EAB53FC461572 /* Pods-pokemonGoIvInspector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonGoIvInspector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonGoIvInspector/Pods-pokemonGoIvInspector.debug.xcconfig"; sourceTree = "<group>"; };
 		1065044E7410FF9521F7C54B /* Pods-pokemonGoIvInspector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonGoIvInspector.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonGoIvInspector/Pods-pokemonGoIvInspector.release.xcconfig"; sourceTree = "<group>"; };
+		8B9C81CD1D5B0A61005739EF /* Pokemons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemons.swift; sourceTree = "<group>"; };
+		8B9C81CF1D5B1248005739EF /* PkmsAutoCompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PkmsAutoCompleteView.swift; sourceTree = "<group>"; };
 		8BF0EBE71D5873B500E6B29A /* pokemonGoIvInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokemonGoIvInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0EBEA1D5873B600E6B29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF0EBEC1D5873B600E6B29A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B9C81CC1D5B0A18005739EF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8B9C81CD1D5B0A61005739EF /* Pokemons.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		8BF0EBDE1D5873B500E6B29A = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +139,7 @@
 		8BF0EBE91D5873B600E6B29A /* pokemonGoIvInspector */ = {
 			isa = PBXGroup;
 			children = (
+				8B9C81CC1D5B0A18005739EF /* Constants */,
 				8BF0EC201D58749A00E6B29A /* Routers */,
 				8BF0EC1F1D58749100E6B29A /* Managers */,
 				8BF0EC1E1D58748A00E6B29A /* Categories */,
@@ -167,6 +180,7 @@
 				8BF0EBEC1D5873B600E6B29A /* ViewController.swift */,
 				8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */,
 				8BF0EC231D598BBF00E6B29A /* PokeIvCalculatorController.swift */,
+				8B9C81CF1D5B1248005739EF /* PkmsAutoCompleteView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -389,10 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF0EBED1D5873B600E6B29A /* ViewController.swift in Sources */,
+				8B9C81CE1D5B0A61005739EF /* Pokemons.swift in Sources */,
 				8BF0EC221D58818A00E6B29A /* PokeSearchResultsController.swift in Sources */,
 				8BF0EC241D598BBF00E6B29A /* PokeIvCalculatorController.swift in Sources */,
 				8BF0EBF31D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld in Sources */,
 				8BF0EBEB1D5873B600E6B29A /* AppDelegate.swift in Sources */,
+				8B9C81D01D5B1248005739EF /* PkmsAutoCompleteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
