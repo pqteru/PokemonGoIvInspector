@@ -161,7 +161,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="TFn-Id-RdT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k8-K4-B0f">
                                                     <rect key="frame" x="8" y="19" width="80" height="21"/>
@@ -196,7 +196,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Xgj-He-SBB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZD-7f-mBs">
                                                     <rect key="frame" x="8" y="19" width="80" height="21"/>
@@ -332,6 +332,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="LIg-o4-OoA"/>
                     <connections>
+                        <outlet property="dustSelection" destination="orm-KO-e7W" id="H6O-iz-Df1"/>
                         <outlet property="pokemonSelection" destination="gFQ-jg-0uB" id="gLz-Br-TD8"/>
                     </connections>
                 </tableViewController>

@@ -8,18 +8,17 @@
 
 import UIKit
 
-protocol PkmsAutoCompleteDelegate {
+protocol AutoCompleteDelegate {
     
-    func didSearchedByString(string: String) -> Void
-    func didSelectedByIndexPath(indexPath: NSIndexPath) -> String
+    func autoCmpView(autoCmpView: AutoCompleteView, selectedOpt: AnyObject)
 }
 
-class PkmsAutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSource {
+class AutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
-    var autocmpDelegate: PkmsAutoCompleteDelegate?
-    var autocmpData = Pokemons
-    dynamic var selectedPkm = ""
-    
+    var autoCmpDelegate: AutoCompleteDelegate?
+    var source: [String]?
+    var options: [String] = []
+
     // MARK: - Initialize
     
     required override init(frame: CGRect, style: UITableViewStyle) {
@@ -28,8 +27,14 @@ class PkmsAutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSou
         self.delegate = self
         self.dataSource = self
         
-        let width = getMaxWidthWithOptions(self.autocmpData)
+        let width = getMaxWidthWithOptions(options)
         self.frame = CGRectMake(frame.origin.x, frame.origin.y, width, frame.height)
+    }
+    
+    convenience init(frame: CGRect, style: UITableViewStyle, options: [String]) {
+        self.init(frame: frame, style: style)
+        
+        self.source = options
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,9 +60,9 @@ class PkmsAutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSou
     
     // MARK: - Actions
     
-    func searchAutocompleteEntriesWithSubstring(subString: String) {
+    func searchWithSubstring(subString: String) {
         
-        let matches = Pokemons.filter({(item: String) -> Bool in
+        let matches = self.source!.filter({(item: String) -> Bool in
             
             let stringMatch = item.lowercaseString.rangeOfString(subString.lowercaseString)
             return stringMatch != nil ? true : false
@@ -65,7 +70,7 @@ class PkmsAutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSou
         
         log.debug("matches: \(matches)")
         
-        self.autocmpData = matches
+        self.options = matches
         self.reloadData()
     }
     
@@ -73,9 +78,9 @@ class PkmsAutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSou
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        log.debug("autocmpData.count: \(autocmpData.count)")
+        log.debug("autocmpData.count: \(options.count)")
         
-        return autocmpData.count
+        return options.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -86,18 +91,20 @@ class PkmsAutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSou
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        log.debug("text: \(autocmpData[indexPath.row])")
-        
-        cell?.textLabel?.text = autocmpData[indexPath.row]
+        if let txt = options[indexPath.row] as String! {
+            log.debug("txt: \(txt)")
+            cell?.textLabel?.text = txt
+        }
         
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        self.selectedPkm = self.autocmpData[indexPath.row]
-        log.debug("self.selectedPkm: \(self.selectedPkm)")
+        let selectedOpt = options[indexPath.row]
+        log.debug("selectedOpt: \(selectedOpt)")
         
+        self.autoCmpDelegate?.autoCmpView(self, selectedOpt: selectedOpt)
         self.hidden = true
     }
 }
