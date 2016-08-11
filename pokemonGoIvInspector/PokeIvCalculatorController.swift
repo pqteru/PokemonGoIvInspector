@@ -12,19 +12,76 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var pokemonSelection: UITextField!
     
+    private var myContext = 0
+    
     let autocmpView = PkmsAutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain)
     
+    // MARK: - Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setup()
+        addObservers()
+    }
+    
+    deinit {
+        
+        removeObservers()
+    }
+    
+    // MARK: - Setup
+    
+    func setup() {
+        
+        setupPkmsAutoCmp()
+        
+        self.tableView.allowsSelection = false
+        
+        pokemonSelection.delegate = self
+    }
+    
+    func setupPkmsAutoCmp() {
         
         autocmpView.frame = CGRectOffset(autocmpView.frame, CGRectGetMinX(pokemonSelection.frame), CGRectGetMaxY(pokemonSelection.frame) + 30)
         autocmpView.hidden = true
         self.view.addSubview(autocmpView)
         autocmpView.layoutIfNeeded()
-        
-        pokemonSelection.delegate = self
     }
+    
+    // MARK: - Observer
+    
+    func addObservers() {
+        
+        log.debug("")
+        
+        autocmpView.addObserver(self, forKeyPath: "selectedPkm", options: .New, context: &myContext)
+    }
+    
+    func removeObservers() {
+        
+        autocmpView.removeObserver(self, forKeyPath: "selectedPkm", context: &myContext)
+    }
+    
+    // MARK: - Observer Handler
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        
+        log.debug("change: \(change)")
+        
+        if context == &myContext {
+            
+            if let newValue = change?[NSKeyValueChangeNewKey] {
+                log.debug("value changed: \(newValue)")
+                
+                self.pokemonSelection.text = newValue as? String
+            }
+        } else {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        }
+    }
+    
+    // MARK: - Actions
     
     @IBAction func actionCal(sender: AnyObject) {
         
@@ -33,6 +90,8 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate {
     @IBAction func actionRecal(sender: AnyObject) {
         
     }
+    
+    // MARK: - UITextFieldDelegate
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
@@ -78,14 +137,4 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate {
     //    }
 }
 
-extension String {
-    func rangeFromNSRange(nsRange : NSRange) -> Range<String.Index>? {
-        let from16 = utf16.startIndex.advancedBy(nsRange.location, limit: utf16.endIndex)
-        let to16 = from16.advancedBy(nsRange.length, limit: utf16.endIndex)
-        if let from = String.Index(from16, within: self),
-            let to = String.Index(to16, within: self) {
-            return from ..< to
-        }
-        return nil
-    }
-}
+
