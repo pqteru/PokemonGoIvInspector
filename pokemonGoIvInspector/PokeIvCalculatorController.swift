@@ -77,16 +77,6 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         dustSelection.inputView = dustPickerView
         dustSelection.tag = SelectionType.StarDust.rawValue
         dustSelection.delegate = self
-        
-        /*
-         dustAutoCmpView.frame = CGRectOffset(dustAutoCmpView.frame,
-         CGRectGetMinX(dustSelection.frame),
-         CGRectGetMaxY(dustSelection.frame) + 30)
-         dustAutoCmpView.hidden = true
-         dustAutoCmpView.tag = AutoCmpType.StarDust.rawValue
-         dustAutoCmpView.autoCmpDelegate = self
-         self.view.addSubview(dustAutoCmpView)
-         */
     }
     
     //    // MARK: - Observer
@@ -162,17 +152,7 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         
         pkmsAutoCmpView.hidden = true
     }
-    
-    //    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-    //
-    //        log.debug("")
-    //
-    //        if textField.tag == SelectionType.StarDust.rawValue {
-    //            return false
-    //        }
-    //        return true;
-    //    }
-    
+
     // MARK: - AutoCompleteDelegate
     
     func autoCmpView(autoCmpView: AutoCompleteView, selectedOpt: AnyObject) {
@@ -187,27 +167,6 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
             break
         }
     }
-    
-    //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //
-    //        if let count = self.autocmpData?.count where count > 0 {
-    //            return count
-    //        }
-    //
-    //        return 0
-    //    }
-    //
-    //    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    //
-    //        let cellId = "cell"
-    //        let cell = tableView.dequeueReusableCellWithIdentifier(cellId)
-    //
-    //        if let data = self.autocmpData {
-    //            cell?.textLabel?.text = data[indexPath.row]
-    //        }
-    //
-    //        return cell!
-    //    }
     
     // MARK: - UIPickerDelegate
     
