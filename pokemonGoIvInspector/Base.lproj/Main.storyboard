@@ -332,8 +332,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="LIg-o4-OoA"/>
                     <connections>
+                        <outlet property="cpTextField" destination="GND-X1-oJS" id="Kdb-32-PkN"/>
                         <outlet property="dustSelection" destination="orm-KO-e7W" id="H6O-iz-Df1"/>
+                        <outlet property="hpTextField" destination="Iq5-hr-eEI" id="niF-XR-CEy"/>
                         <outlet property="pokemonSelection" destination="gFQ-jg-0uB" id="gLz-Br-TD8"/>
+                        <outlet property="poweredSwitch" destination="Zdm-xt-Cep" id="4Jm-VP-ZQb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOe-fD-XP5" userLabel="First Responder" sceneMemberID="firstResponder"/>

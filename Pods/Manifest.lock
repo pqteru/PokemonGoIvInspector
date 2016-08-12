@@ -11,6 +11,7 @@ PODS:
   - PokemonKit (2.0.0):
     - Alamofire (~> 3.0)
     - AlamofireObjectMapper (~> 2.1)
+  - SwiftyJSON (2.3.2)
   - XCGLogger (3.3)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 2.0)
   - AlamofireNetworkActivityIndicator (~> 1.0)
   - PokemonKit
+  - SwiftyJSON
   - XCGLogger (~> 3.3)
 
 SPEC CHECKSUMS:
@@ -27,6 +29,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   PokemonKit: 0511e4dda51dac012e70051ead6945bb7b2bc3b2
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
 COCOAPODS: 0.39.0

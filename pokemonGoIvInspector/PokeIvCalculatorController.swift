@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import ObjectMapper
 
 enum SelectionType: Int {
     case Pokemons
@@ -20,13 +22,16 @@ enum AutoCmpType: Int {
 class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, AutoCompleteDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pokemonSelection: UITextField!
+    @IBOutlet weak var cpTextField: UITextField!
+    @IBOutlet weak var hpTextField: UITextField!
+    @IBOutlet weak var poweredSwitch: UISwitch!
     @IBOutlet weak var dustSelection: UITextField!
     var dustPickerView = UIPickerView()
     
     private var myContext = 0
     
     let pkmsAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: Pokemons)
-    let dustAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: StarDusts)
+    //let dustAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: StarDusts)
     
     // MARK: - Cycle
     
@@ -115,6 +120,60 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     
     @IBAction func actionCal(sender: AnyObject) {
         
+        // calculate pokemon perfection
+        // CP = MAX(10, FLOOR(Stamina0.5 * Attack * Def0.5 / 10))
+        
+        //CP值計算方式：CP = floor((Base Attack + Attack IV) * (Base Defense + Defense IV)^0.5 * (Base HP + HP IV)^0.5 * (PowerUpValue^2) / 10 )
+        
+        let pkmName = self.pokemonSelection.text!.uppercaseString
+        
+        //let cp = Int(self.cpTextField.text!)
+        //let hp = Int(self.hpTextField.text!)
+        //let dust = Int(self.dustSelection.text!)
+        //let isPowered = self.poweredSwitch.on
+        
+        //let ivs = evaluate(pkm, cp: cp!, hp: hp!, dust: dust!)
+        
+        let pkm = readPKMJson(pkmName)
+        log.debug("pkm: \(pkm?.name)")
+    }
+    
+    func evaluate(pkm: String, cp: Int, hp: Int, dust: Int) -> Int {
+        
+        //var baseStamia = hp * 2
+        //var baseAttack =
+        
+        return 0
+    }
+    
+    func readPKMJson(name: String) -> Pokemon? {
+        
+        if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "json") {
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    //print("jsonData:\(jsonObj)")
+                    
+                    let obj = jsonObj.filter({ (string, json) -> Bool in
+                        return name == json["name"].string
+                    })
+                    
+                    log.debug("obj: \(obj[0].1.description)")
+                    
+                    return Mapper<Pokemon>().map(obj[0].1.description)!
+                    
+                } else {
+                    print("could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
+        return nil
     }
     
     @IBAction func actionRecal(sender: AnyObject) {
@@ -152,7 +211,7 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         
         pkmsAutoCmpView.hidden = true
     }
-
+    
     // MARK: - AutoCompleteDelegate
     
     func autoCmpView(autoCmpView: AutoCompleteView, selectedOpt: AnyObject) {

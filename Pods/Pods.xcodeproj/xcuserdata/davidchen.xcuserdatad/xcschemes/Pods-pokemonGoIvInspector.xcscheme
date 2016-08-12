@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0B2B957023A1ADF3B987DEDB'
+               BlueprintIdentifier = '83756BA3DC0338FA304F91A0'
                BlueprintName = 'Pods-pokemonGoIvInspector'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_pokemonGoIvInspector.framework'>

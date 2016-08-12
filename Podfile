@@ -9,6 +9,7 @@ target 'pokemonGoIvInspector' do
     pod 'AlamofireImage', '~> 2.0'
     pod 'XCGLogger', '~> 3.3'
     pod 'PokemonKit'
+    pod 'SwiftyJSON'
 end
 
 target 'pokemonGoIvInspectorTests' do
