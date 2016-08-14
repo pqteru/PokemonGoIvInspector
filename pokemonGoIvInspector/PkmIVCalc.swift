@@ -36,7 +36,7 @@ class PkmIVCalc {
         
         log.debug("pkm.stats: \(pkm.stats)")
         
-        let baseStamia = (pkm.stats["stamina"] as! NSNumber).doubleValue
+        let baseStamia = (pkm.stats["stamina"] as! NSNumber).integerValue
         let baseAttack = (pkm.stats["attack"] as! NSNumber).integerValue
         let baseDefense = (pkm.stats["defense"] as! NSNumber).integerValue
         
@@ -50,15 +50,12 @@ class PkmIVCalc {
         
         for pkmLv in lvs {
             
-            let ECpM = Double(pkmLv.cpScalar!)
+            let ECpM = readLevelToCpmJson(pkmLv)!
             log.debug("ECpM: \(ECpM)")
             
             // HP = (Base Stam + Stam IV) * Lvl(CPScalar)
-            let staIv = floor(Double(hp) / Double(ECpM) - Double(baseStamia))
+            let staIv = Int(Double(hp) / ECpM - Double(baseStamia))
             log.debug("staIv: \(staIv)")
-            
-            let puv = pow(ECpM, 2.0)
-            log.debug("puv: \(puv)")
             
             for atkIv in 0...15 {
                 let a = Double(baseAttack + atkIv)
@@ -67,11 +64,12 @@ class PkmIVCalc {
                     let b = pow(Double(baseDefense + defIv), 0.5)
                     let c = pow(Double(baseStamia + staIv), 0.5)
                     
-                    let estCp = floor(a * b * c * puv / 10)
+                    let estCp = floor(a * b * c * pow(ECpM, 2) / 10)
                     
                     if cp == estCp {
-                        //print("estCp: \(estCp)")
-                        let cmb = [atkIv, defIv, Int(staIv)]
+                        log.debug("estCp: \(estCp)")
+                        
+                        let cmb = [atkIv, defIv, staIv]
                         //print("cmb: \(cmb)")
                         ary.append(cmb)
                     }
@@ -162,6 +160,40 @@ class PkmIVCalc {
                     }
                     
                     return pkmlvs
+                    
+                } else {
+                    print("could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
+        return nil
+    }
+    
+    func readLevelToCpmJson(pkmLv: PokemonLevel) -> Double? {
+        
+        if let path = NSBundle.mainBundle().pathForResource("level-to-cpm", ofType: "json") {
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    //print("jsonData: \(jsonObj)")
+                    
+                    let v = jsonObj.dictionary?.filter({ (ele) -> Bool in
+                        //log.debug("ele: \(ele.0)")
+                        //log.debug("ele: \(ele.1)")
+                        return Int(ele.0) == pkmLv.level!
+                    })
+                    log.debug("v: \(v?.first?.1)")
+                    
+                    if let ECpM = (v?.first?.1.doubleValue)! as Double? {
+                        return ECpM
+                    }
+                    return nil
                     
                 } else {
                     print("could not get json from file, make sure that file contains valid json.")

@@ -179,7 +179,7 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         
         // evaluate each ivs combination
         guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) else {
-            log.error("cannot calculate!")
+            log.error("cannot find iv combinations")
             return
         }
         log.debug("ivs: \(ivs)")
