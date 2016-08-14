@@ -116,64 +116,89 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     //        }
     //    }
     
+    // MARK: - Validation
+    
+    func validate() -> Bool {
+        
+        let pkmName = self.pokemonSelection.text!
+        let cp = self.cpTextField.text!
+        let hp = self.hpTextField.text!
+        let dust = self.dustSelection.text!
+        
+        guard pkmName != "" else {
+            let alert = UIAlertController(message: "Please enter pokemon filed")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        guard cp != "" else {
+            let alert = UIAlertController(message: "Please enter cp filed")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        guard hp != "" else {
+            let alert = UIAlertController(message: "Please enter hp filed")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        guard dust != "" else {
+            let alert = UIAlertController(message: "Please select stardust filed")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        return true
+    }
+    
     // MARK: - Actions
     
     @IBAction func actionCal(sender: AnyObject) {
         
-        // calculate pokemon perfection
-        // CP = MAX(10, FLOOR(Stamina0.5 * Attack * Def0.5 / 10))
-        
-        //CP值計算方式：CP = floor((Base Attack + Attack IV) * (Base Defense + Defense IV)^0.5 * (Base HP + HP IV)^0.5 * (PowerUpValue^2) / 10 )
+        if !validate() {
+            return
+        }
         
         let pkmName = self.pokemonSelection.text!.uppercaseString
         
-        //let cp = Int(self.cpTextField.text!)
-        //let hp = Int(self.hpTextField.text!)
-        //let dust = Int(self.dustSelection.text!)
-        //let isPowered = self.poweredSwitch.on
-        
-        //let ivs = evaluate(pkm, cp: cp!, hp: hp!, dust: dust!)
-        
-        let pkm = readPKMJson(pkmName)
-        log.debug("pkm: \(pkm?.name)")
-    }
-    
-    func evaluate(pkm: String, cp: Int, hp: Int, dust: Int) -> Int {
-        
-        //var baseStamia = hp * 2
-        //var baseAttack =
-        
-        return 0
-    }
-    
-    func readPKMJson(name: String) -> Pokemon? {
-        
-        if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "json") {
-            do {
-                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                let jsonObj = JSON(data: data)
-                if jsonObj != JSON.null {
-                    //print("jsonData:\(jsonObj)")
-                    
-                    let obj = jsonObj.filter({ (string, json) -> Bool in
-                        return name == json["name"].string
-                    })
-                    
-                    log.debug("obj: \(obj[0].1.description)")
-                    
-                    return Mapper<Pokemon>().map(obj[0].1.description)!
-                    
-                } else {
-                    print("could not get json from file, make sure that file contains valid json.")
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        } else {
-            print("Invalid filename/path.")
+        guard let pkm = readPKMJson(pkmName) as Pokemon! else {
+            let alert = UIAlertController(message: "Please select stardust filed")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
         
-        return nil
+        let cp = Double(self.cpTextField.text!)!
+        let hp = Int(self.hpTextField.text!)!
+        let dust = Int(self.dustSelection.text!)!
+        let isPowered = self.poweredSwitch.on
+        
+        log.debug("cp: \(cp)")
+        log.debug("hp: \(hp)")
+        log.debug("dust: \(dust)")
+        
+        // evaluate each ivs combination
+        guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) else {
+            log.error("cannot calculate!")
+            return
+        }
+        log.debug("ivs: \(ivs)")
+        
+        // get prefections
+        let prefs = PkmIVCalc.instance.getPrefections(ivs)
+        log.debug("prefs: \(prefs.count)")
+        
+        let max = prefs.maxElement()!
+        let min = prefs.minElement()!
+        let avg = PkmIVCalc.instance.getAvgPrefection(prefs)
+        
+        // calculate max avg min prefection %
+        let maxPref = PkmIVCalc.instance.getPrefPercentageStr(max)
+        let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
+        let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
+        
+        let alert = UIAlertController(message: "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)")
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func actionRecal(sender: AnyObject) {
@@ -241,15 +266,48 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return StarDusts[row]
+        return "\(StarDusts[row])"
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let txt = StarDusts[row] as String!
+        let txt = "\(StarDusts[row])"
         self.dustSelection.text = txt
         dustSelection.resignFirstResponder()
     }
+    
+    // MARK: - Common
+    
+    func readPKMJson(name: String) -> Pokemon? {
+        
+        if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "json") {
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    //print("jsonData:\(jsonObj)")
+                    
+                    let obj = jsonObj.filter({ (string, json) -> Bool in
+                        return name == json["name"].string
+                    })
+                    
+                    log.debug("obj: \(obj[0].1.description)")
+                    
+                    return Mapper<Pokemon>().map(obj[0].1.description)!
+                    
+                } else {
+                    print("could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
+        return nil
+    }
+
 }
 
 

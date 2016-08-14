@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A63BB1F1D5EED920011426C /* UIAlertController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB1E1D5EED920011426C /* UIAlertController+ext.swift */; };
+		7A63BB211D5F0E9A0011426C /* PkmIVCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */; };
+		7A63BB231D5F1B270011426C /* Double+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB221D5F1B270011426C /* Double+ext.swift */; };
+		7A63BB251D602AC80011426C /* level-to-cpm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB241D602AC70011426C /* level-to-cpm.json */; };
+		7A63BB271D603A420011426C /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB261D603A420011426C /* levels.json */; };
+		7A63BB291D603B080011426C /* PokemonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB281D603B080011426C /* PokemonLevel.swift */; };
 		8B2305411D5DC7500063FC57 /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B2305401D5DC7500063FC57 /* pokemon.json */; };
 		8B2305461D5DD6AF0063FC57 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2305451D5DD6AF0063FC57 /* Pokemon.swift */; };
 		8B9C81CE1D5B0A61005739EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81CD1D5B0A61005739EF /* Constants.swift */; };
@@ -45,6 +51,12 @@
 /* Begin PBXFileReference section */
 		0DC4D4A7954EAB53FC461572 /* Pods-pokemonGoIvInspector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonGoIvInspector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonGoIvInspector/Pods-pokemonGoIvInspector.debug.xcconfig"; sourceTree = "<group>"; };
 		1065044E7410FF9521F7C54B /* Pods-pokemonGoIvInspector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonGoIvInspector.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonGoIvInspector/Pods-pokemonGoIvInspector.release.xcconfig"; sourceTree = "<group>"; };
+		7A63BB1E1D5EED920011426C /* UIAlertController+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ext.swift"; sourceTree = "<group>"; };
+		7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PkmIVCalc.swift; sourceTree = "<group>"; };
+		7A63BB221D5F1B270011426C /* Double+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+ext.swift"; sourceTree = "<group>"; };
+		7A63BB241D602AC70011426C /* level-to-cpm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "level-to-cpm.json"; sourceTree = "<group>"; };
+		7A63BB261D603A420011426C /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
+		7A63BB281D603B080011426C /* PokemonLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonLevel.swift; sourceTree = "<group>"; };
 		8B2305401D5DC7500063FC57 /* pokemon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
 		8B2305451D5DD6AF0063FC57 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		8B9C81CD1D5B0A61005739EF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -116,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				8B2305401D5DC7500063FC57 /* pokemon.json */,
+				7A63BB241D602AC70011426C /* level-to-cpm.json */,
+				7A63BB261D603A420011426C /* levels.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -132,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				8B9C81D21D5C1C37005739EF /* String+ext.swift */,
+				7A63BB1E1D5EED920011426C /* UIAlertController+ext.swift */,
+				7A63BB221D5F1B270011426C /* Double+ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -164,9 +180,6 @@
 				8B2305421D5DC7570063FC57 /* Data */,
 				8B9C81D11D5C1C23005739EF /* Extensions */,
 				8B9C81CC1D5B0A18005739EF /* Constants */,
-				8BF0EC201D58749A00E6B29A /* Routers */,
-				8BF0EC1F1D58749100E6B29A /* Managers */,
-				8BF0EC1E1D58748A00E6B29A /* Categories */,
 				8BF0EC1D1D58748400E6B29A /* Components */,
 				8BF0EC1C1D58748000E6B29A /* Models */,
 				8BF0EC1B1D58747200E6B29A /* Controllers */,
@@ -212,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2305451D5DD6AF0063FC57 /* Pokemon.swift */,
+				7A63BB281D603B080011426C /* PokemonLevel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -220,29 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				8B9C81CF1D5B1248005739EF /* AutoCompleteView.swift */,
+				7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */,
 			);
 			name = Components;
-			sourceTree = "<group>";
-		};
-		8BF0EC1E1D58748A00E6B29A /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
-		8BF0EC1F1D58749100E6B29A /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Managers;
-			sourceTree = "<group>";
-		};
-		8BF0EC201D58749A00E6B29A /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +350,8 @@
 				8B2305411D5DC7500063FC57 /* pokemon.json in Resources */,
 				8BF0EBF51D5873B600E6B29A /* Assets.xcassets in Resources */,
 				8BF0EBF01D5873B600E6B29A /* Main.storyboard in Resources */,
+				7A63BB271D603A420011426C /* levels.json in Resources */,
+				7A63BB251D602AC80011426C /* level-to-cpm.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,9 +427,13 @@
 				8BF0EBED1D5873B600E6B29A /* ViewController.swift in Sources */,
 				8B9C81CE1D5B0A61005739EF /* Constants.swift in Sources */,
 				8BF0EC221D58818A00E6B29A /* PokeSearchResultsController.swift in Sources */,
+				7A63BB1F1D5EED920011426C /* UIAlertController+ext.swift in Sources */,
 				8BF0EC241D598BBF00E6B29A /* PokeIvCalculatorController.swift in Sources */,
 				8BF0EBF31D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld in Sources */,
+				7A63BB231D5F1B270011426C /* Double+ext.swift in Sources */,
+				7A63BB291D603B080011426C /* PokemonLevel.swift in Sources */,
 				8B2305461D5DD6AF0063FC57 /* Pokemon.swift in Sources */,
+				7A63BB211D5F0E9A0011426C /* PkmIVCalc.swift in Sources */,
 				8BF0EBEB1D5873B600E6B29A /* AppDelegate.swift in Sources */,
 				8B9C81D31D5C1C37005739EF /* String+ext.swift in Sources */,
 				8B9C81D01D5B1248005739EF /* AutoCompleteView.swift in Sources */,
