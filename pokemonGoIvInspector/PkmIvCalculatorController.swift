@@ -35,6 +35,18 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     let pkmsAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: Pokemons)
     //let dustAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: StarDusts)
     
+    var toolbar: UIToolbar {
+        get {
+            let tb = UIToolbar(frame: CGRectMake(0, 0, self.view.frame.size.width, 50))
+            tb.barStyle = UIBarStyle.Default
+            tb.items = [
+                UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
+                UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PkmIvCalculatorController.actionDone))]
+            tb.sizeToFit()
+            return tb
+        }
+    }
+    
     // MARK: - Test
     
     func testCase() {
@@ -76,6 +88,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     
     func setup() {
         
+        self.title = "IV Calculator"
         self.tableView.allowsSelection = false
         
         setupPkmsAutoCmp()
@@ -83,9 +96,13 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         pokemonSelection.delegate = self
         
         setupStarDustField()
+        setupToolBar()
+    }
+    
+    func setupToolBar() {
         
-        //dustSelection.tag = SelectionType.StarDust.rawValue
-        //dustSelection.delegate = self
+        self.cpTextField.inputAccessoryView = self.toolbar
+        self.hpTextField.inputAccessoryView = self.toolbar
     }
     
     func setupPkmsAutoCmp() {
@@ -268,6 +285,14 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         // show alert
         showPossibilityAlert(res)
+    }
+    
+    func actionDone() {
+        
+        self.pokemonSelection.resignFirstResponder()
+        self.cpTextField.resignFirstResponder()
+        self.hpTextField.resignFirstResponder()
+        self.dustSelection.resignFirstResponder()
     }
     
     // MARK: - UITextFieldDelegate

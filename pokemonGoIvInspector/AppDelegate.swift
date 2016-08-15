@@ -18,11 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func setupApparence() {
+        
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 225, green: 204, blue: 0.0, alpha: 1)
+        UINavigationBar.appearance().translucent = false
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         setupLog()
+        setupApparence()
+        
+//        // launch SignInViewController
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewControllerWithIdentifier("PkmIvCalculatorController")
+//        let nav = UINavigationController(rootViewController: vc)
+//        self.window?.rootViewController = nav
+//        
+//        self.window?.makeKeyAndVisible()
         
         return true
     }
