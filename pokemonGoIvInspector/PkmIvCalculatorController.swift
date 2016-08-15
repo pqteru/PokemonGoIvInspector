@@ -91,11 +91,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         self.title = "IV Calculator"
         self.tableView.allowsSelection = false
         
-        setupPkmsAutoCmp()
-        pokemonSelection.tag = SelectionType.Pokemons.rawValue
-        pokemonSelection.delegate = self
-        
-        setupStarDustField()
+        setupTextField()
         setupToolBar()
     }
     
@@ -103,6 +99,18 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         self.cpTextField.inputAccessoryView = self.toolbar
         self.hpTextField.inputAccessoryView = self.toolbar
+    }
+    
+    func setupTextField() {
+        
+        setupPkmsAutoCmp()
+        setupStarDustField()
+        
+        self.cpTextField.delegate = self
+        self.cpTextField.tag = 99
+        
+        self.hpTextField.delegate = self
+        self.hpTextField.tag = 99
     }
     
     func setupPkmsAutoCmp() {
@@ -114,6 +122,12 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         pkmsAutoCmpView.tag = AutoCmpType.Pokemons.rawValue
         pkmsAutoCmpView.autoCmpDelegate = self
         self.view.addSubview(pkmsAutoCmpView)
+        
+        pokemonSelection.tag = SelectionType.Pokemons.rawValue
+        pokemonSelection.delegate = self
+        
+        pokemonSelection.tag = SelectionType.Pokemons.rawValue
+        pokemonSelection.delegate = self
     }
     
     func setupStarDustField() {

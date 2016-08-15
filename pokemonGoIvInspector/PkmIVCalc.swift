@@ -97,7 +97,8 @@ class PkmIVCalc {
         var estSta = Int(floor(Double(hp) / totalCpM - Double(baseSta)))
         
         // (baseStamina + IndSta) * TCpM >= hp
-        while Int((Double(baseSta) + Double(estSta)) * totalCpM) < hp+1 {
+        while Int((Double(baseSta) + Double(estSta)) * totalCpM) < hp+1 &&
+            (estSta >= 0 && estSta <= 15) {
             autoreleasepool({
                 let c = Int((Double(baseSta) + Double(estSta)) * totalCpM)
                 log.debug("c: \(c)")

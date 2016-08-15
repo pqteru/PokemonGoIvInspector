@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PokemonKit
+//import PokemonKit
 
 class ViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
@@ -19,8 +19,6 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
     
     /// Secondary search results table view.
     var resultsTableController: PokeSearchResultsController!
-    
-    var pokemons: [PKMPokemon]?
     
     override func viewDidLoad() {
         
@@ -45,10 +43,6 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
          hierarchy until it finds the root view controller or one that defines a presentation context.
          */
         definesPresentationContext = true
-        
-        tester()
-        
-        getPokemons()
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,33 +113,6 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchContro
         //        let resultsController = searchController.searchResultsController as! PokeSearchResultsController
         //        resultsController.filteredCountries = filteredResults
         //        resultsController.tableView.reloadData()
-    }
-    
-    // MARK: - Tester
-    
-    func tester() {
-        
-        PokemonKit.fetchBerry("1")
-            .then { berryInfo in
-                //self.testLabel.text = berryInfo.name;
-                log.debug("berryInfo: \(berryInfo)")
-                
-            }.onError {error in
-                print(error)
-        }
-        
-        PokemonKit.fetchPokemons()
-            .then { mons in
-                log.debug("mons: \(mons)")
-                let results = mons.results
-                
-            }.onError { error in
-                print(error)
-        }
-    }
-    
-    func getPokemons() {
-        
     }
     
 }

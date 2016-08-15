@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import XCGLogger
+import Firebase
 
 // global constant
 let log = XCGLogger.defaultInstance()
@@ -30,13 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupLog()
         setupApparence()
         
-//        // launch SignInViewController
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = sb.instantiateViewControllerWithIdentifier("PkmIvCalculatorController")
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.window?.rootViewController = nav
-//        
-//        self.window?.makeKeyAndVisible()
+        FIRApp.configure()
         
         return true
     }

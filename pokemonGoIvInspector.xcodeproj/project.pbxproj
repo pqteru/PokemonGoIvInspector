@@ -13,6 +13,7 @@
 		7A63BB251D602AC80011426C /* level-to-cpm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB241D602AC70011426C /* level-to-cpm.json */; };
 		7A63BB271D603A420011426C /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB261D603A420011426C /* levels.json */; };
 		7A63BB291D603B080011426C /* PokemonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB281D603B080011426C /* PokemonLevel.swift */; };
+		7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8476491D622FF50023D7FF /* GoogleService-Info.plist */; };
 		7AAC4B1E1D62029E00CB18CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */; };
 		8B2305411D5DC7500063FC57 /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B2305401D5DC7500063FC57 /* pokemon.json */; };
 		8B2305461D5DD6AF0063FC57 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2305451D5DD6AF0063FC57 /* Pokemon.swift */; };
@@ -64,6 +65,7 @@
 		7A63BB241D602AC70011426C /* level-to-cpm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "level-to-cpm.json"; sourceTree = "<group>"; };
 		7A63BB261D603A420011426C /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
 		7A63BB281D603B080011426C /* PokemonLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonLevel.swift; sourceTree = "<group>"; };
+		7A8476491D622FF50023D7FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2305401D5DC7500063FC57 /* pokemon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
 		8B2305451D5DD6AF0063FC57 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */,
 				8BF0EBF61D5873B600E6B29A /* LaunchScreen.storyboard */,
 				8BF0EBF91D5873B600E6B29A /* Info.plist */,
+				7A8476491D622FF50023D7FF /* GoogleService-Info.plist */,
 				8BF0EBF11D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld */,
 			);
 			path = pokemonGoIvInspector;
@@ -378,6 +381,7 @@
 			files = (
 				8BF0EBF81D5873B600E6B29A /* LaunchScreen.storyboard in Resources */,
 				8B2305411D5DC7500063FC57 /* pokemon.json in Resources */,
+				7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */,
 				8B7437D51D61BC3000288716 /* PkmStatsHeader.xib in Resources */,
 				8B7437D11D61B88C00288716 /* PkmStatsCell.xib in Resources */,
 				8BF0EBF01D5873B600E6B29A /* Main.storyboard in Resources */,
