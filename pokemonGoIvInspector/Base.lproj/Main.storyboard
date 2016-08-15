@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1994" y="339"/>
         </scene>
-        <!--Poke Iv Calculator Controller-->
+        <!--Pkm Iv Calculator Controller-->
         <scene sceneID="qWu-FT-yWk">
             <objects>
-                <tableViewController storyboardIdentifier="PokeIvCalculatorController" id="aA7-u4-sNX" customClass="PokeIvCalculatorController" customModule="pokemonGoIvInspector" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PkmIvCalculatorController" id="aA7-u4-sNX" customClass="PkmIvCalculatorController" customModule="pokemonGoIvInspector" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="A5P-Lw-fvE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,18 +298,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-Ib-6QF">
-                                                    <rect key="frame" x="8" y="15" width="584" height="30"/>
+                                                    <rect key="frame" x="8" y="15" width="288" height="30"/>
                                                     <state key="normal" title="Find"/>
                                                     <connections>
-                                                        <action selector="actionCal:" destination="aA7-u4-sNX" eventType="touchUpInside" id="GGJ-WD-slK"/>
+                                                        <action selector="actionFind:" destination="aA7-u4-sNX" eventType="touchUpInside" id="RmI-rw-tYb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqZ-u2-hYc">
+                                                    <rect key="frame" x="304" y="15" width="288" height="30"/>
+                                                    <state key="normal" title="Refind"/>
+                                                    <connections>
+                                                        <action selector="actionRefind:" destination="aA7-u4-sNX" eventType="touchUpInside" id="DCo-xV-8q3"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="6Lg-Ib-6QF" secondAttribute="trailing" id="62b-aa-mEc"/>
                                                 <constraint firstItem="6Lg-Ib-6QF" firstAttribute="centerY" secondItem="E2y-eu-vxQ" secondAttribute="centerY" id="FtM-Es-J4Z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VqZ-u2-hYc" secondAttribute="trailing" id="PtY-lY-iOI"/>
+                                                <constraint firstItem="VqZ-u2-hYc" firstAttribute="centerY" secondItem="E2y-eu-vxQ" secondAttribute="centerY" id="f65-Ci-XIk"/>
+                                                <constraint firstItem="VqZ-u2-hYc" firstAttribute="leading" secondItem="6Lg-Ib-6QF" secondAttribute="trailing" constant="8" id="kFh-Bz-bVS"/>
                                                 <constraint firstItem="6Lg-Ib-6QF" firstAttribute="leading" secondItem="E2y-eu-vxQ" secondAttribute="leadingMargin" id="kgQ-zC-Abi"/>
+                                                <constraint firstItem="VqZ-u2-hYc" firstAttribute="width" secondItem="6Lg-Ib-6QF" secondAttribute="width" id="nu5-nf-A5l"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="62b-aa-mEc"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -332,6 +348,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOe-fD-XP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1994" y="1108"/>
+        </scene>
+        <!--Pkm Possible Stats View Controller-->
+        <scene sceneID="edu-6O-aDt">
+            <objects>
+                <tableViewController storyboardIdentifier="PkmPossibleStatsViewController" id="zoA-li-bDF" customClass="PkmPossibleStatsViewController" customModule="pokemonGoIvInspector" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Lm-PP-bP7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIV" id="DdT-Jo-GoV">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DdT-Jo-GoV" id="8JV-4h-2ee">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zoA-li-bDF" id="4Bq-wA-EYf"/>
+                            <outlet property="delegate" destination="zoA-li-bDF" id="K2q-qO-Tp3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wG5-jT-XJJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhi-p2-Ngz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2771" y="1108"/>
         </scene>
         <!--Item-->
         <scene sceneID="LhH-iD-3Nv">

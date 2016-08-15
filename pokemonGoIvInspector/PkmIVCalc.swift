@@ -94,9 +94,8 @@ class PkmIVCalc {
         while Int((Double(baseSta) + Double(estSta)) * totalCpM) < hp+1 {
             let c = Int((Double(baseSta) + Double(estSta)) * totalCpM)
             log.debug("c: \(c)")
-            log.debug("estSta: \(estSta)")
-            
             if c >= hp {
+                log.debug("estSta: \(estSta)")
                 ary.append(estSta)
             }
             estSta += 1
@@ -117,12 +116,27 @@ class PkmIVCalc {
         return ary
     }
     
-    func getPrefections(ary: [Array<Int>]) -> [Double] {
+    func getPerfections(ary: [Array<Int>]) -> [Double] {
         
         var a = [Double]()
         for comb in ary {
             let pref = calcPrefection(comb[0], def: comb[1], sta: comb[2])
             a.append(pref)
+        }
+        
+        return a
+    }
+    
+    func getPokemonStatsFormatData(ary: [Array<Int>]) -> [PokemonStats] {
+        
+        var a = [PokemonStats]()
+        for comb in ary {
+            let pkmStats = PokemonStats()
+            pkmStats.atk = comb[0]
+            pkmStats.def = comb[1]
+            pkmStats.sta = comb[2]
+            pkmStats.calcPerfection()
+            a.append(pkmStats)
         }
         
         return a

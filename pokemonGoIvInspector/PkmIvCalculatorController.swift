@@ -19,7 +19,7 @@ enum AutoCmpType: Int {
     case Pokemons
 }
 
-class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, AutoCompleteDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, AutoCompleteDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pokemonSelection: UITextField!
     @IBOutlet weak var cpTextField: UITextField!
@@ -27,6 +27,8 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     @IBOutlet weak var poweredSwitch: UISwitch!
     @IBOutlet weak var dustSelection: UITextField!
     var dustPickerView = UIPickerView()
+    
+    var tempIvs: [Array<Int>]?
     
     private var myContext = 0
     
@@ -37,13 +39,21 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     
     func testCase() {
         
-        self.pokemonSelection.text = "BULBASAUR"
-        self.cpTextField.text = "446"
-        self.hpTextField.text = "53"
-        self.dustSelection.text = "2200"
+        self.pokemonSelection.text = "PSYDUCK"
+        self.cpTextField.text = "44"
+        self.hpTextField.text = "18"
+        self.dustSelection.text = "200"
+        self.poweredSwitch.on = false
+        
+        actionFind(self)
+        
+        self.pokemonSelection.text = "PSYDUCK"
+        self.cpTextField.text = "58"
+        self.hpTextField.text = "21"
+        self.dustSelection.text = "200"
         self.poweredSwitch.on = true
         
-        actionCal(self)
+        actionRefind(self)
     }
     
     // MARK: - Cycle
@@ -170,7 +180,7 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     
     // MARK: - Actions
     
-    @IBAction func actionCal(sender: AnyObject) {
+    @IBAction func actionFind(sender: AnyObject) {
         
         if !validate() {
             return
@@ -201,8 +211,11 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         }
         log.debug("ivs: \(ivs)")
         
+        // saved to temp
+        tempIvs = ivs
+        
         // get prefections
-        let prefs = PkmIVCalc.instance.getPrefections(ivs)
+        let prefs = PkmIVCalc.instance.getPerfections(ivs)
         log.debug("prefs: \(prefs.count)")
         
         let max = prefs.maxElement()!
@@ -214,12 +227,74 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
         let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
         
-        let alert = UIAlertController(message: "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)")
-        self.presentViewController(alert, animated: true, completion: nil)
+        let msg = "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)"
+        showPossibilityAlert(msg)
     }
     
-    @IBAction func actionRecal(sender: AnyObject) {
+    @IBAction func actionRefind(sender: AnyObject) {
         
+        if !validate() {
+            return
+        }
+        
+        let pkmName = self.pokemonSelection.text!.uppercaseString
+        
+        guard let pkm = readPKMJson(pkmName) as Pokemon! else {
+            let alert = UIAlertController(message: "Please select stardust filed")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let cp = Double(self.cpTextField.text!)!
+        let hp = Int(self.hpTextField.text!)!
+        let dust = Int(self.dustSelection.text!)!
+        let isPowered = self.poweredSwitch.on
+        
+        log.debug("cp: \(cp)")
+        log.debug("hp: \(hp)")
+        log.debug("dust: \(dust)")
+        
+        // evaluate each ivs combination
+        guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) where ivs.count > 0 else {
+            let alert = UIAlertController(title: "Error", message: "Cannot find any IV combination!")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        log.debug("ivs: \(ivs)")
+
+        guard let temp = tempIvs else {
+            let alert = UIAlertController(title: "Error", message: "Please use find first!")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
+        // get intersection possible IVs
+        var res = [Array<Int>]()
+        for obj in temp {
+            for iv in ivs {
+                if iv[0] == obj[0] && iv[1] == obj[1] && iv[2] == obj[2] {
+                    let possIv = [iv[0], iv[1], iv[2]]
+                    res.append(possIv)
+                }
+            }
+        }
+        log.debug("res: \(res)")
+        
+        // get prefections
+        let prefs = PkmIVCalc.instance.getPerfections(res)
+        log.debug("prefs: \(prefs.count)")
+        
+        let max = prefs.maxElement()!
+        let min = prefs.minElement()!
+        let avg = PkmIVCalc.instance.getAvgPrefection(prefs)
+        
+        // calculate max avg min prefection %
+        let maxPref = PkmIVCalc.instance.getPrefPercentageStr(max)
+        let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
+        let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
+        
+        let msg = "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)"
+        showPossibilityAlert(msg)
     }
     
     // MARK: - UITextFieldDelegate
@@ -324,7 +399,20 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         
         return nil
     }
-
+    
+    func showPossibilityAlert(message: String?) {
+        
+        let alert = UIAlertController(title: "Info", message: message, preferredStyle: .Alert)
+        let actOk = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        let actDetail = UIAlertAction(title: "Detail", style: .Default) { (alert) in
+            // to detail view
+            if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PkmPossibleStatsViewController") {
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        alert.addAction(actOk)
+        alert.addAction(actDetail)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
-
-
