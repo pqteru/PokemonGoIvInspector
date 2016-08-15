@@ -28,7 +28,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     @IBOutlet weak var dustSelection: UITextField!
     var dustPickerView = UIPickerView()
     
-    var tempIvs: [Array<Int>]?
+    var tempPkmStatsAry: [PokemonStats]?
     
     private var myContext = 0
     
@@ -204,31 +204,18 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         log.debug("dust: \(dust)")
         
         // evaluate each ivs combination
-        guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) where ivs.count > 0 else {
+        guard let pkmStatsAry = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) where pkmStatsAry.count > 0 else {
             let alert = UIAlertController(title: "Error", message: "Cannot find any IV combination")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        log.debug("ivs: \(ivs)")
+        log.debug("pkmStatsAry count: \(pkmStatsAry.count)")
         
         // saved to temp
-        tempIvs = ivs
+        tempPkmStatsAry = pkmStatsAry
         
-        // get prefections
-        let prefs = PkmIVCalc.instance.getPerfections(ivs)
-        log.debug("prefs: \(prefs.count)")
-        
-        let max = prefs.maxElement()!
-        let min = prefs.minElement()!
-        let avg = PkmIVCalc.instance.getAvgPrefection(prefs)
-        
-        // calculate max avg min prefection %
-        let maxPref = PkmIVCalc.instance.getPrefPercentageStr(max)
-        let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
-        let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
-        
-        let msg = "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)"
-        showPossibilityAlert(msg)
+        // show alert
+        showPossibilityAlert(pkmStatsAry)
     }
     
     @IBAction func actionRefind(sender: AnyObject) {
@@ -255,46 +242,32 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         log.debug("dust: \(dust)")
         
         // evaluate each ivs combination
-        guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) where ivs.count > 0 else {
-            let alert = UIAlertController(title: "Error", message: "Cannot find any IV combination!")
+        guard let pkmStatsAry = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) where pkmStatsAry.count > 0 else {
+            let alert = UIAlertController(title: "Error", message: "Cannot find any IV combination")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        log.debug("ivs: \(ivs)")
+        log.debug("pkmStatsAry count: \(pkmStatsAry.count)")
 
-        guard let temp = tempIvs else {
+        guard let temp = tempPkmStatsAry else {
             let alert = UIAlertController(title: "Error", message: "Please use find first!")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
         
         // get intersection possible IVs
-        var res = [Array<Int>]()
+        var res = [PokemonStats]()
         for obj in temp {
-            for iv in ivs {
-                if iv[0] == obj[0] && iv[1] == obj[1] && iv[2] == obj[2] {
-                    let possIv = [iv[0], iv[1], iv[2]]
-                    res.append(possIv)
+            for stats in pkmStatsAry {
+                if stats.atk == obj.atk && stats.def == obj.def && stats.sta == obj.sta {
+                    res.append(stats)
                 }
             }
         }
         log.debug("res: \(res)")
         
-        // get prefections
-        let prefs = PkmIVCalc.instance.getPerfections(res)
-        log.debug("prefs: \(prefs.count)")
-        
-        let max = prefs.maxElement()!
-        let min = prefs.minElement()!
-        let avg = PkmIVCalc.instance.getAvgPrefection(prefs)
-        
-        // calculate max avg min prefection %
-        let maxPref = PkmIVCalc.instance.getPrefPercentageStr(max)
-        let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
-        let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
-        
-        let msg = "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)"
-        showPossibilityAlert(msg)
+        // show alert
+        showPossibilityAlert(res)
     }
     
     // MARK: - UITextFieldDelegate
@@ -400,13 +373,28 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         return nil
     }
     
-    func showPossibilityAlert(message: String?) {
+    func showPossibilityAlert(data: [PokemonStats]) {
         
-        let alert = UIAlertController(title: "Info", message: message, preferredStyle: .Alert)
+        // sort
+        let sortedAry = data.sort(>)
+        
+        let max = (sortedAry.first! as PokemonStats).perfection
+        let min = (sortedAry.last! as PokemonStats).perfection
+        let avg = PkmIVCalc.instance.getAvgPrefection(sortedAry)
+        
+        // calculate max avg min prefection %
+        let maxPref = PkmIVCalc.instance.getPrefPercentageStr(max)
+        let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
+        let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
+        
+        let msg = "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)"
+        
+        let alert = UIAlertController(title: "Info", message: msg, preferredStyle: .Alert)
         let actOk = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         let actDetail = UIAlertAction(title: "Detail", style: .Default) { (alert) in
             // to detail view
-            if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PkmPossibleStatsViewController") {
+            if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PkmPossibleStatsViewController") as? PkmPossibleStatsViewController {
+                vc.dataSource = sortedAry
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)
             }

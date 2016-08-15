@@ -11,7 +11,7 @@ import UIKit
 class PkmPossibleStatsViewController: UITableViewController {
     
     let cellId = "cellIV"
-    var ivs: [Array<Int>]?
+    var dataSource: [PokemonStats]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class PkmPossibleStatsViewController: UITableViewController {
     
     func testCase() {
         
-        ivs = [[17, 1, 2, 3, 60], [18, 4, 12, 15, 45]]
+        //dataSource = [[17, 1, 2, 3, 60], [18, 4, 12, 15, 45]]
     }
     
     // MARK: - UITableViewDelegate
@@ -38,7 +38,7 @@ class PkmPossibleStatsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = ivs?.count {
+        if let count = dataSource?.count {
             return count
         }
         return 0
@@ -47,16 +47,18 @@ class PkmPossibleStatsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PkmStatsCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! PkmStatsCell
-        let iv = ivs![indexPath.row]
-        configureCell(cell, ary: iv)
+        let pkmStats = dataSource![indexPath.row]
+        configureCell(cell, pokemonStats: pkmStats)
         return cell
     }
     
-    func configureCell(cell: PkmStatsCell, ary: [Int]) {
-        cell.labelLv.text = String(ary[0])
-        cell.labelAtk.text = String(ary[1])
-        cell.labelDef.text = String(ary[2])
-        cell.labelSta.text = String(ary[3])
-        cell.labelPerf.text = String(ary[4])
+    func configureCell(cell: PkmStatsCell, pokemonStats: PokemonStats) {
+        cell.labelLv.text = String(pokemonStats.lv)
+        cell.labelAtk.text = String(pokemonStats.atk)
+        cell.labelDef.text = String(pokemonStats.def)
+        cell.labelSta.text = String(pokemonStats.sta)
+        
+        // perfection percentage
+        cell.labelPerf.text = PkmIVCalc.instance.getPrefPercentageStr(pokemonStats.perfection)
     }
 }

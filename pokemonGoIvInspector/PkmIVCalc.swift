@@ -26,7 +26,7 @@ class PkmIVCalc {
      Base Stamina = 2 * HP
      */
     
-    func evaluate(pkm: Pokemon, cp: Double, hp: Int, dust: Int, isPowered: Bool) -> [Array<Int>]? {
+    func evaluate(pkm: Pokemon, cp: Double, hp: Int, dust: Int, isPowered: Bool) -> [PokemonStats]? {
         
         // calculate pokemon perfection
         // CP = floor((Base Attack + Attack IV) * (Base Defense + Defense IV)^0.5 * (Base HP + HP IV)^0.5 * (PowerUpValue^2) / 10 )
@@ -42,42 +42,48 @@ class PkmIVCalc {
             return nil
         }
         
-        var ary = [Array<Int>]()
+        var ary = [PokemonStats]()
         
         for pkmLv in lvs {
-            let lv = (pkmLv.level! + 1) / 2
-            log.debug("lv: \(lv)")
             
-            let TCpM = getTotalCpM(pkmLv)
-            log.debug("TCpM: \(TCpM)")
-            
-            // HP = (Base Stam + Stam IV) * Lvl(CPScalar)
-            guard let staIvs = getPossibleStaIvs(baseStamia, totalCpM: TCpM, hp: hp) else {
-                return nil
-            }
-            log.debug("staIvs: \(staIvs)")
-            
-            for atkIv in 0...15 {
-                let a = Double(baseAttack + atkIv)
+            autoreleasepool({
                 
-                for defIv in 0...15 {
-                    let b = pow(Double(baseDefense + defIv), 0.5)
+                let lv = (pkmLv.level! + 1) / 2
+                log.debug("lv: \(lv)")
+                
+                let TCpM = getTotalCpM(pkmLv)
+                log.debug("TCpM: \(TCpM)")
+                
+                // HP = (Base Stam + Stam IV) * Lvl(CPScalar)
+                if let staIvs = getPossibleStaIvs(baseStamia, totalCpM: TCpM, hp: hp) {
+                    log.debug("staIvs: \(staIvs)")
                     
-                    for staIv in staIvs {
-                        let c = pow(Double(baseStamia + staIv), 0.5)
+                    for atkIv in 0...15 {
+                        let a = Double(baseAttack + atkIv)
                         
-                        let estCp = floor(a * b * c * pow(TCpM, 2) / 10)
-                        
-                        if cp == estCp {
-                            //log.debug("estCp: \(estCp)")
+                        for defIv in 0...15 {
+                            let b = pow(Double(baseDefense + defIv), 0.5)
                             
-                            let cmb = [atkIv, defIv, staIv]
-                            //print("cmb: \(cmb)")
-                            ary.append(cmb)
+                            for staIv in staIvs {
+                                let c = pow(Double(baseStamia + staIv), 0.5)
+                                
+                                let estCp = floor(a * b * c * pow(TCpM, 2) / 10)
+                                //log.debug("estCp: \(estCp)")
+                                
+                                if cp == estCp {
+                                    let pkmStats = PokemonStats()
+                                    pkmStats.lv = lv
+                                    pkmStats.atk = atkIv
+                                    pkmStats.def = defIv
+                                    pkmStats.sta = staIv
+                                    pkmStats.calcPerfection()
+                                    ary.append(pkmStats)
+                                }
+                            }
                         }
                     }
                 }
-            }
+            })
         }
         
         return ary
@@ -92,13 +98,15 @@ class PkmIVCalc {
         
         // (baseStamina + IndSta) * TCpM >= hp
         while Int((Double(baseSta) + Double(estSta)) * totalCpM) < hp+1 {
-            let c = Int((Double(baseSta) + Double(estSta)) * totalCpM)
-            log.debug("c: \(c)")
-            if c >= hp {
-                log.debug("estSta: \(estSta)")
-                ary.append(estSta)
-            }
-            estSta += 1
+            autoreleasepool({
+                let c = Int((Double(baseSta) + Double(estSta)) * totalCpM)
+                log.debug("c: \(c)")
+                if c >= hp {
+                    log.debug("estSta: \(estSta)")
+                    ary.append(estSta)
+                }
+                estSta += 1
+            })
         }
         log.debug("ary: \(ary)")
         
@@ -116,46 +124,6 @@ class PkmIVCalc {
         return ary
     }
     
-    func getPerfections(ary: [Array<Int>]) -> [Double] {
-        
-        var a = [Double]()
-        for comb in ary {
-            let pref = calcPrefection(comb[0], def: comb[1], sta: comb[2])
-            a.append(pref)
-        }
-        
-        return a
-    }
-    
-    func getPokemonStatsFormatData(ary: [Array<Int>]) -> [PokemonStats] {
-        
-        var a = [PokemonStats]()
-        for comb in ary {
-            let pkmStats = PokemonStats()
-            pkmStats.atk = comb[0]
-            pkmStats.def = comb[1]
-            pkmStats.sta = comb[2]
-            pkmStats.calcPerfection()
-            a.append(pkmStats)
-        }
-        
-        return a
-    }
-    
-    func calcPrefection(atk: Int, def: Int, sta: Int) -> Double {
-        
-        //current
-        let current = atk + def + sta
-        
-        // max
-        let total = getMaxAtk() + getMaxDef() + getMaxSta();
-        
-        let pref = Double(current)/Double(total)
-        //log.debug("pref: \(pref))")
-        
-        return pref.roundToPlaces(2)
-    }
-    
     func getTotalCpM(pkmLv: PokemonLevel) -> Double {
         
         // TotalCpMultiplier = CpMultiplier + AdditionalMultiplier (usually is 0)
@@ -163,11 +131,11 @@ class PkmIVCalc {
         return pkmLv.cpScalar! + 0
     }
     
-    func getAvgPrefection(ary: [Double]) -> Double {
+    func getAvgPrefection(ary: [PokemonStats]) -> Double {
         
         var total = 0.0
-        for pref in ary {
-            total += pref
+        for stats in ary {
+            total += stats.perfection
         }
         log.debug("total: \(total)")
         
@@ -175,18 +143,6 @@ class PkmIVCalc {
         log.debug("ary.count: \(ary.count)")
         
         return avg.roundToPlaces(2)
-    }
-    
-    func getMaxAtk() -> Int {
-        return 15
-    }
-    
-    func getMaxDef() -> Int {
-        return 15
-    }
-    
-    func getMaxSta() -> Int {
-        return 15
     }
     
     func getPrefPercentageStr(pref: Double) -> String {

@@ -57,3 +57,7 @@ func ==(a: PokemonStats, b: PokemonStats) -> Bool {
 func <(a: PokemonStats, b: PokemonStats) -> Bool {
     return a.perfection < b.perfection
 }
+
+func >(a: PokemonStats, b: PokemonStats) -> Bool {
+    return a.perfection > b.perfection
+}
