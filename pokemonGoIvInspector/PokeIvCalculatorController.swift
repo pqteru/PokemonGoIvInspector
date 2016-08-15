@@ -33,12 +33,28 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
     let pkmsAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: Pokemons)
     //let dustAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: StarDusts)
     
+    // MARK: - Test
+    
+    func testCase() {
+        
+        self.pokemonSelection.text = "BULBASAUR"
+        self.cpTextField.text = "446"
+        self.hpTextField.text = "53"
+        self.dustSelection.text = "2200"
+        self.poweredSwitch.on = true
+        
+        actionCal(self)
+    }
+    
     // MARK: - Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         //addObservers()
+        
+        // test
+        //testCase()
     }
     
     deinit {
@@ -178,8 +194,9 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         log.debug("dust: \(dust)")
         
         // evaluate each ivs combination
-        guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) else {
-            log.error("cannot find iv combinations")
+        guard let ivs = PkmIVCalc.instance.evaluate(pkm, cp: cp, hp: hp, dust: dust, isPowered: isPowered) where ivs.count > 0 else {
+            let alert = UIAlertController(title: "Error", message: "Cannot find any IV combination")
+            self.presentViewController(alert, animated: true, completion: nil)
             return
         }
         log.debug("ivs: \(ivs)")
@@ -276,7 +293,7 @@ class PokeIvCalculatorController: UITableViewController, UITextFieldDelegate, Au
         dustSelection.resignFirstResponder()
     }
     
-    // MARK: - Common
+    // MARK: - Private
     
     func readPKMJson(name: String) -> Pokemon? {
         

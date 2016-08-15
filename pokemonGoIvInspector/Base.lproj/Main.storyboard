@@ -270,7 +270,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-xt-Cep">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-xt-Cep">
                                                     <rect key="frame" x="543" y="14" width="51" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="B7X-NW-VcU"/>
@@ -297,15 +297,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNL-uZ-WUa">
-                                                    <rect key="frame" x="304" y="15" width="288" height="30"/>
-                                                    <state key="normal" title="Refine"/>
-                                                    <connections>
-                                                        <action selector="actionRecal:" destination="aA7-u4-sNX" eventType="touchUpInside" id="ZL0-z7-BSQ"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-Ib-6QF">
-                                                    <rect key="frame" x="8" y="15" width="288" height="30"/>
+                                                    <rect key="frame" x="8" y="15" width="584" height="30"/>
                                                     <state key="normal" title="Find"/>
                                                     <connections>
                                                         <action selector="actionCal:" destination="aA7-u4-sNX" eventType="touchUpInside" id="GGJ-WD-slK"/>
@@ -313,12 +306,9 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bNL-uZ-WUa" firstAttribute="centerY" secondItem="E2y-eu-vxQ" secondAttribute="centerY" id="7FL-cP-1U6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Lg-Ib-6QF" secondAttribute="trailing" id="62b-aa-mEc"/>
                                                 <constraint firstItem="6Lg-Ib-6QF" firstAttribute="centerY" secondItem="E2y-eu-vxQ" secondAttribute="centerY" id="FtM-Es-J4Z"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bNL-uZ-WUa" secondAttribute="trailing" id="boP-Pw-Qdu"/>
                                                 <constraint firstItem="6Lg-Ib-6QF" firstAttribute="leading" secondItem="E2y-eu-vxQ" secondAttribute="leadingMargin" id="kgQ-zC-Abi"/>
-                                                <constraint firstItem="bNL-uZ-WUa" firstAttribute="width" secondItem="6Lg-Ib-6QF" secondAttribute="width" id="nWk-Wv-mST"/>
-                                                <constraint firstItem="bNL-uZ-WUa" firstAttribute="leading" secondItem="6Lg-Ib-6QF" secondAttribute="trailing" constant="8" id="yI7-cZ-RN4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
