@@ -16,11 +16,13 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - ObjectMapper (1.4.0)
   - SwiftyJSON (2.3.2)
   - XCGLogger (3.3)
 
 DEPENDENCIES:
   - Firebase
+  - ObjectMapper
   - SwiftyJSON
   - XCGLogger (~> 3.3)
 
@@ -31,6 +33,7 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 

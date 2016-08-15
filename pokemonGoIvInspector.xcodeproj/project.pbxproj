@@ -28,13 +28,11 @@
 		8B9C81D01D5B1248005739EF /* AutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81CF1D5B1248005739EF /* AutoCompleteView.swift */; };
 		8B9C81D31D5C1C37005739EF /* String+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81D21D5C1C37005739EF /* String+ext.swift */; };
 		8BF0EBEB1D5873B600E6B29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EBEA1D5873B600E6B29A /* AppDelegate.swift */; };
-		8BF0EBED1D5873B600E6B29A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EBEC1D5873B600E6B29A /* ViewController.swift */; };
 		8BF0EBF01D5873B600E6B29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0EBEE1D5873B600E6B29A /* Main.storyboard */; };
 		8BF0EBF31D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EBF11D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld */; };
 		8BF0EBF81D5873B600E6B29A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0EBF61D5873B600E6B29A /* LaunchScreen.storyboard */; };
 		8BF0EC031D5873B600E6B29A /* pokemonGoIvInspectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC021D5873B600E6B29A /* pokemonGoIvInspectorTests.swift */; };
 		8BF0EC0E1D5873B600E6B29A /* pokemonGoIvInspectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC0D1D5873B600E6B29A /* pokemonGoIvInspectorUITests.swift */; };
-		8BF0EC221D58818A00E6B29A /* PokeSearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */; };
 		8BF0EC241D598BBF00E6B29A /* PkmIvCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0EC231D598BBF00E6B29A /* PkmIvCalculatorController.swift */; };
 		C1363EFDD5F531A6F1386976 /* Pods_pokemonGoIvInspector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947066D23659E1330A841126 /* Pods_pokemonGoIvInspector.framework */; };
 /* End PBXBuildFile section */
@@ -81,7 +79,6 @@
 		8B9C81D21D5C1C37005739EF /* String+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ext.swift"; sourceTree = "<group>"; };
 		8BF0EBE71D5873B500E6B29A /* pokemonGoIvInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokemonGoIvInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0EBEA1D5873B600E6B29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BF0EBEC1D5873B600E6B29A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BF0EBEF1D5873B600E6B29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BF0EBF21D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pokemonGoIvInspector.xcdatamodel; sourceTree = "<group>"; };
 		8BF0EBF71D5873B600E6B29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,7 +89,6 @@
 		8BF0EC091D5873B600E6B29A /* pokemonGoIvInspectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokemonGoIvInspectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0EC0D1D5873B600E6B29A /* pokemonGoIvInspectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonGoIvInspectorUITests.swift; sourceTree = "<group>"; };
 		8BF0EC0F1D5873B600E6B29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeSearchResultsController.swift; sourceTree = "<group>"; };
 		8BF0EC231D598BBF00E6B29A /* PkmIvCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PkmIvCalculatorController.swift; sourceTree = "<group>"; };
 		947066D23659E1330A841126 /* Pods_pokemonGoIvInspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokemonGoIvInspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -244,8 +240,6 @@
 		8BF0EC1B1D58747200E6B29A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8BF0EBEC1D5873B600E6B29A /* ViewController.swift */,
-				8BF0EC211D58818A00E6B29A /* PokeSearchResultsController.swift */,
 				8BF0EC231D598BBF00E6B29A /* PkmIvCalculatorController.swift */,
 				8B7437CB1D61B55100288716 /* PkmPossibleStatsViewController.swift */,
 			);
@@ -460,10 +454,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BF0EBED1D5873B600E6B29A /* ViewController.swift in Sources */,
 				8B7437D91D61C0DE00288716 /* PokemonStats.swift in Sources */,
 				8B9C81CE1D5B0A61005739EF /* Constants.swift in Sources */,
-				8BF0EC221D58818A00E6B29A /* PokeSearchResultsController.swift in Sources */,
 				7A63BB1F1D5EED920011426C /* UIAlertController+ext.swift in Sources */,
 				8BF0EC241D598BBF00E6B29A /* PkmIvCalculatorController.swift in Sources */,
 				8BF0EBF31D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld in Sources */,
@@ -621,12 +613,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "527d9f23-cf0d-4c30-84d6-c2cf21e99668";
+				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
 			};
 			name = Debug;
 		};
@@ -636,12 +628,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "527d9f23-cf0d-4c30-84d6-c2cf21e99668";
+				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
 			};
 			name = Release;
 		};

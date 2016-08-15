@@ -7,6 +7,7 @@ target 'pokemonGoIvInspector' do
     pod 'XCGLogger', '~> 3.3'
     pod 'SwiftyJSON'
     pod 'Firebase'
+    pod 'ObjectMapper'
 end
 
 target 'pokemonGoIvInspectorTests' do
