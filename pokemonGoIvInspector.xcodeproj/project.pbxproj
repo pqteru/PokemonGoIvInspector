@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A4E97F41D637C5B001D7BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */; };
 		7A63BB1F1D5EED920011426C /* UIAlertController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB1E1D5EED920011426C /* UIAlertController+ext.swift */; };
 		7A63BB211D5F0E9A0011426C /* PkmIVCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */; };
 		7A63BB231D5F1B270011426C /* Double+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB221D5F1B270011426C /* Double+ext.swift */; };
@@ -14,7 +15,6 @@
 		7A63BB271D603A420011426C /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB261D603A420011426C /* levels.json */; };
 		7A63BB291D603B080011426C /* PokemonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB281D603B080011426C /* PokemonLevel.swift */; };
 		7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8476491D622FF50023D7FF /* GoogleService-Info.plist */; };
-		7AAC4B1E1D62029E00CB18CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */; };
 		8B2305411D5DC7500063FC57 /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B2305401D5DC7500063FC57 /* pokemon.json */; };
 		8B2305461D5DD6AF0063FC57 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2305451D5DD6AF0063FC57 /* Pokemon.swift */; };
 		8B7437CC1D61B55100288716 /* PkmPossibleStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7437CB1D61B55100288716 /* PkmPossibleStatsViewController.swift */; };
@@ -373,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4E97F41D637C5B001D7BD0 /* Assets.xcassets in Resources */,
 				8BF0EBF81D5873B600E6B29A /* LaunchScreen.storyboard in Resources */,
 				8B2305411D5DC7500063FC57 /* pokemon.json in Resources */,
 				7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */,
@@ -380,7 +381,6 @@
 				8B7437D11D61B88C00288716 /* PkmStatsCell.xib in Resources */,
 				8BF0EBF01D5873B600E6B29A /* Main.storyboard in Resources */,
 				7A63BB271D603A420011426C /* levels.json in Resources */,
-				7AAC4B1E1D62029E00CB18CF /* Assets.xcassets in Resources */,
 				7A63BB251D602AC80011426C /* level-to-cpm.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,13 +613,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Hsuan Chen (GD797WXQT7)";
 				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
+				PROVISIONING_PROFILE = "527d9f23-cf0d-4c30-84d6-c2cf21e99668";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -630,13 +630,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Hsuan Chen (GD797WXQT7)";
 				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
+				PROVISIONING_PROFILE = "527d9f23-cf0d-4c30-84d6-c2cf21e99668";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
