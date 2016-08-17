@@ -39,6 +39,8 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     let pkmsAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: Pokemons)
     //let dustAutoCmpView = AutoCompleteView(frame: CGRectMake(0, 0, 200, 120), style: .Plain, options: StarDusts)
     
+    let manager = CalcPkmHistoryManager.sharedInstance
+    
     var toolbar: UIToolbar {
         get {
             let tb = UIToolbar(frame: CGRectMake(0, 0, self.view.frame.size.width, 50))
@@ -52,6 +54,38 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     }
     
     // MARK: - Test
+    
+    func testRead() {
+        
+        let docsPath = NSBundle.mainBundle().resourcePath! + "/Resources"
+        let fileManager = NSFileManager.defaultManager()
+        
+        do {
+            let dirContents = try fileManager.contentsOfDirectoryAtPath(docsPath)
+            log.debug("dirContents: \(dirContents)")
+        } catch let error as NSError {
+            log.debug("\(error.localizedDescription)")
+        }
+        
+        if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "json") {
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    //print("jsonData:\(jsonObj)")
+                    
+                    //log.debug("jsonObj: \(jsonObj)")
+                    
+                } else {
+                    print("could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+    }
     
     func testCase() {
         
@@ -81,6 +115,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         // test
         //testCase()
+        //testRead()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -275,11 +310,14 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         }
         log.debug("pkmStatsAry count: \(pkmStatsAry.count)")
         
-        // saved to temp
+        // saved to temp for refine to do intersect
         tempPkmStatsAry = pkmStatsAry
         
         // show alert
         showPossibilityAlert(pkmStatsAry)
+        
+        // save to core data
+        saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered))
     }
     
     @IBAction func actionRefind(sender: AnyObject) {
@@ -332,6 +370,9 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         // show alert
         showPossibilityAlert(res)
+        
+        // save to core data
+        saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered))
     }
     
     func actionDone() {
@@ -341,13 +382,6 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         self.hpTextField.resignFirstResponder()
         self.dustSelection.resignFirstResponder()
     }
-    
-//    // MARK: - UITableViewDelegate
-//    
-//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        
-//        
-//    }
     
     // MARK: - UITextFieldDelegate
     
@@ -481,5 +515,11 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         alert.addAction(actOk)
         alert.addAction(actDetail)
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func saveToHistory(name: String, img: String, cp: Int, hp: Int, stardust: Int, powered: Int) {
+        
+        let param = ["name": name, "image": img, "cp": cp, "hp": hp, "stardust": stardust, "powered": powered]
+        manager.insertCalcPkmHistoryByParam(param, completionHandler: nil)
     }
 }
