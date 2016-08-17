@@ -121,7 +121,7 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
         
         // Update Cell
         cell.pkmImage.image = UIImage(named: record.image)
-        cell.labelName.text = String("\(record.name.lowercaseString.uppercaseFirst)")
+        cell.labelName.text = getPokemonName(record.name.lowercaseString.uppercaseFirst)
         cell.labelCp.text = String("CP: \(record.cp)")
         cell.labelHp.text = String("HP: \(record.hp)")
         cell.labelStardust.text = String("Stardust: \(record.stardust)")
@@ -134,5 +134,29 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return 100.0
+    }
+    
+    // MARK: - Private
+    
+    func getPokemonName(name: String) -> String {
+        
+        // special pokemon name: Nidoran♀, Nidoran♂, Mr. Mime, Farfetch'd
+        if name == "Nidoran_female"{
+            return "Nidoran♀"
+        }
+        
+        if name == "Nidoran_male"{
+            return "Nidoran♂"
+        }
+        
+        if name == "Mr_mime"{
+            return "Mr. Mime"
+        }
+        
+        if name == "Farfetchd"{
+            return "Farfetch'd"
+        }
+        
+        return name
     }
 }

@@ -61,17 +61,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         log.debug("now: \(now)")
     }
     
-    func testRead() {
-        
-        let docsPath = NSBundle.mainBundle().resourcePath! + "/Resources"
-        let fileManager = NSFileManager.defaultManager()
-        
-        do {
-            let dirContents = try fileManager.contentsOfDirectoryAtPath(docsPath)
-            log.debug("dirContents: \(dirContents)")
-        } catch let error as NSError {
-            log.debug("\(error.localizedDescription)")
-        }
+    func fixPokemonName() {
         
         if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "json") {
             do {
@@ -120,9 +110,9 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         //addObservers()
         
         // test
+        //fixPokemonName()
         //testCase()
-        //testRead()
-        testUtils()
+        //testUtils()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -414,6 +404,8 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
             return false
         }
         
+        log.debug("range: \(range)")
+        
         let userEnteredString = textField.text
         let newString = (userEnteredString! as NSString).stringByReplacingCharactersInRange(range, withString: string) as String
         
@@ -481,6 +473,8 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     
     func readPKMJson(name: String) -> Pokemon? {
         
+        log.debug("name: \(name)")
+        
         if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "json") {
             do {
                 let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
@@ -489,7 +483,28 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
                     //print("jsonData:\(jsonObj)")
                     
                     let obj = jsonObj.filter({ (string, json) -> Bool in
-                        return name == json["name"].string
+                        
+                        let pkmName = json["name"].string
+                        log.debug("pkmName: \(pkmName)")
+                        
+                        // special case: Nidoran♀, Nidoran♂, Mr. Mime, Farfetch'd
+                        if name == "NIDORAN♀" && pkmName == "NIDORAN_FEMALE"{
+                            return true
+                        }
+                        
+                        if name == "NIDORAN♂" && pkmName == "NIDORAN_MALE"{
+                            return true
+                        }
+                        
+                        if name == "MR. MIME" && pkmName == "MR_MIME"{
+                            return true
+                        }
+                        
+                        if name == "FARFETCH'D" && pkmName == "FARFETCHD"{
+                            return true
+                        }
+                        
+                        return name == pkmName
                     })
                     
                     log.debug("obj: \(obj[0].1.description)")
