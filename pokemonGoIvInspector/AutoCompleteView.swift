@@ -66,7 +66,7 @@ class AutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSource 
         
         let matches = self.source!.filter({(item: String) -> Bool in
             let stringMatch = item.lowercaseString.rangeOfString(subString.lowercaseString)
-            return stringMatch != nil ? true : false
+            return stringMatch != nil
         })
         
         log.debug("matches: \(matches)")
