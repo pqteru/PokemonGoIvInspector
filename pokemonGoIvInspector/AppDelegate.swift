@@ -139,7 +139,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // setup GA
         FIRApp.configure()
+        
+        #if DEBUG
         FIRAnalyticsConfiguration.sharedInstance().setAnalyticsCollectionEnabled(false)
+        #else
+        FIRAnalyticsConfiguration.sharedInstance().setAnalyticsCollectionEnabled(true)
+        #endif
     }
     
     func setupAppearance() {

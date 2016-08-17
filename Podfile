@@ -8,6 +8,8 @@ target 'pokemonGoIvInspector' do
     pod 'SwiftyJSON'
     pod 'Firebase'
     pod 'ObjectMapper'
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
 end
 
 target 'pokemonGoIvInspectorTests' do

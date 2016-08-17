@@ -118,7 +118,7 @@ class PkmIVCalc {
         
         var ary = readPKMLevelsJson(dust)
         if ary?.count > 0 && isPowered == false {
-            // 移除 .5 lv
+            // if the pokemon has powered up, remove .5 lv
             ary?.removeAtIndex(1)
             ary?.removeLast()
         }

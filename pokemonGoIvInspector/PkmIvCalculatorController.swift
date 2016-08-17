@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import ObjectMapper
+import Firebase
 
 enum SelectionType: Int {
     case Pokemons
@@ -27,6 +28,9 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     @IBOutlet weak var poweredSwitch: UISwitch!
     @IBOutlet weak var dustSelection: UITextField!
     var dustPickerView = UIPickerView()
+    
+    // ad banner
+    var bannerView = GADBannerView(adSize: kGADAdSizeBanner)
     
     var tempPkmStatsAry: [PokemonStats]?
     
@@ -79,6 +83,20 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         //testCase()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // show ad
+        bannerView.hidden = false
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // hide ad
+        bannerView.hidden = true
+    }
+    
     deinit {
         
         //removeObservers()
@@ -93,6 +111,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         setupTextField()
         setupToolBar()
+        setupAdBanner()
     }
     
     func setupToolBar() {
@@ -104,7 +123,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     func setupTextField() {
         
         setupPkmsAutoCmp()
-        setupStarDustField()
+        setupStardustField()
         
         self.cpTextField.delegate = self
         self.cpTextField.tag = 99
@@ -130,7 +149,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         pokemonSelection.delegate = self
     }
     
-    func setupStarDustField() {
+    func setupStardustField() {
         
         dustPickerView.frame = CGRectMake(0, self.view.bounds.height - 320, self.view.bounds.width, 320)
         dustPickerView.delegate = self
@@ -139,6 +158,20 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         dustSelection.inputView = dustPickerView
         dustSelection.tag = SelectionType.StarDust.rawValue
         dustSelection.delegate = self
+    }
+    
+    func setupAdBanner() {
+        
+        print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+        bannerView.frame = CGRectOffset(bannerView.frame, 0,
+                                        CGRectGetHeight(self.view.frame) - CGRectGetHeight(bannerView.frame))
+        self.navigationController?.view.addSubview(bannerView)
+        
+        // test only
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.loadRequest(GADRequest())
     }
     
     //    // MARK: - Observer
@@ -308,6 +341,13 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         self.hpTextField.resignFirstResponder()
         self.dustSelection.resignFirstResponder()
     }
+    
+//    // MARK: - UITableViewDelegate
+//    
+//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        
+//        
+//    }
     
     // MARK: - UITextFieldDelegate
     

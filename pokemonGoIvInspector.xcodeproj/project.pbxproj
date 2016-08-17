@@ -24,6 +24,7 @@
 		8B7437D51D61BC3000288716 /* PkmStatsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7437D41D61BC3000288716 /* PkmStatsHeader.xib */; };
 		8B7437D71D61BE5F00288716 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7437D61D61BE5F00288716 /* UIView+ext.swift */; };
 		8B7437D91D61C0DE00288716 /* PokemonStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7437D81D61C0DE00288716 /* PokemonStats.swift */; };
+		8B764C951D640BA100347647 /* CalculatedHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B764C941D640BA100347647 /* CalculatedHistoryViewController.swift */; };
 		8B9C81CE1D5B0A61005739EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81CD1D5B0A61005739EF /* Constants.swift */; };
 		8B9C81D01D5B1248005739EF /* AutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81CF1D5B1248005739EF /* AutoCompleteView.swift */; };
 		8B9C81D31D5C1C37005739EF /* String+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C81D21D5C1C37005739EF /* String+ext.swift */; };
@@ -75,6 +76,7 @@
 		8B7437D41D61BC3000288716 /* PkmStatsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PkmStatsHeader.xib; sourceTree = "<group>"; };
 		8B7437D61D61BE5F00288716 /* UIView+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		8B7437D81D61C0DE00288716 /* PokemonStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonStats.swift; sourceTree = "<group>"; };
+		8B764C941D640BA100347647 /* CalculatedHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatedHistoryViewController.swift; sourceTree = "<group>"; };
 		8B9C81CD1D5B0A61005739EF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B9C81CF1D5B1248005739EF /* AutoCompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteView.swift; sourceTree = "<group>"; };
 		8B9C81D21D5C1C37005739EF /* String+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ext.swift"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				8BF0EC231D598BBF00E6B29A /* PkmIvCalculatorController.swift */,
 				8B7437CB1D61B55100288716 /* PkmPossibleStatsViewController.swift */,
+				8B764C941D640BA100347647 /* CalculatedHistoryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				8B9C81D31D5C1C37005739EF /* String+ext.swift in Sources */,
 				8B9C81D01D5B1248005739EF /* AutoCompleteView.swift in Sources */,
 				8B7437D31D61BC1F00288716 /* PkmStatsHeader.swift in Sources */,
+				8B764C951D640BA100347647 /* CalculatedHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,13 +621,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
+				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
+				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -634,13 +639,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
+				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
+				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
