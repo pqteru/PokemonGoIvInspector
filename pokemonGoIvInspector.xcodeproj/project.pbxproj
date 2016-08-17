@@ -613,13 +613,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Hsuan Chen (GD797WXQT7)";
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "527d9f23-cf0d-4c30-84d6-c2cf21e99668";
+				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -630,13 +630,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Hsuan Chen (GD797WXQT7)";
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Hsuan Chen (3X69GCU3JB)";
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "527d9f23-cf0d-4c30-84d6-c2cf21e99668";
+				PROVISIONING_PROFILE = "105dfd96-afa1-4274-8afa-2ae2aadaa38b";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
