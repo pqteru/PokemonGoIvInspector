@@ -30,5 +30,13 @@ extension String {
         return nil
     }
     
-    
+    var first: String {
+        return String(characters.prefix(1))
+    }
+    var last: String {
+        return String(characters.suffix(1))
+    }
+    var uppercaseFirst: String {
+        return first.uppercaseString + String(characters.dropFirst())
+    }
 }

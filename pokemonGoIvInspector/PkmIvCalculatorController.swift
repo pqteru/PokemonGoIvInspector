@@ -55,6 +55,12 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     
     // MARK: - Test
     
+    func testUtils() {
+        
+        let now = DateUtils.sharedInstance.currentDate()
+        log.debug("now: \(now)")
+    }
+    
     func testRead() {
         
         let docsPath = NSBundle.mainBundle().resourcePath! + "/Resources"
@@ -116,6 +122,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         // test
         //testCase()
         //testRead()
+        testUtils()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -288,7 +295,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         let pkmName = self.pokemonSelection.text!.uppercaseString
         
         guard let pkm = readPKMJson(pkmName) as Pokemon! else {
-            let alert = UIAlertController(message: "Please select stardust filed")
+            let alert = UIAlertController(message: "Cannot find any pokemon!")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
@@ -313,11 +320,19 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         // saved to temp for refine to do intersect
         tempPkmStatsAry = pkmStatsAry
         
-        // show alert
-        showPossibilityAlert(pkmStatsAry)
+        // sort
+        let sortedAry = pkmStatsAry.sort(>)
+        let perfs = getPerfections(sortedAry)
+        let maxPerf = perfs["maxPerf"] as String!
+        let minPerf = perfs["minPerf"] as String!
+        let avgPerf = perfs["avgPerf"] as String!
         
         // save to core data
-        saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered))
+        saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered), maxPerf: maxPerf, avgPerf: avgPerf, minPerf: minPerf)
+        
+        // show alert
+        let msg = "Max perfection: \(maxPerf)\nAvg perfection: \(avgPerf)\nMin perfection: \(minPerf)"
+        showPossibilityAlert(sortedAry, message: msg)
     }
     
     @IBAction func actionRefind(sender: AnyObject) {
@@ -329,7 +344,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         let pkmName = self.pokemonSelection.text!.uppercaseString
         
         guard let pkm = readPKMJson(pkmName) as Pokemon! else {
-            let alert = UIAlertController(message: "Please select stardust filed")
+            let alert = UIAlertController(message: "Cannot find any pokemon!")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
@@ -350,7 +365,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
             return
         }
         log.debug("pkmStatsAry count: \(pkmStatsAry.count)")
-
+        
         guard let temp = tempPkmStatsAry else {
             let alert = UIAlertController(title: "Error", message: "Please use find first!")
             self.presentViewController(alert, animated: true, completion: nil)
@@ -368,11 +383,19 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         }
         log.debug("res: \(res)")
         
-        // show alert
-        showPossibilityAlert(res)
+        // sort
+        let sortedAry = res.sort(>)
+        let perfs = getPerfections(sortedAry)
+        let maxPerf = perfs["maxPerf"] as String!
+        let minPerf = perfs["minPerf"] as String!
+        let avgPerf = perfs["avgPerf"] as String!
         
         // save to core data
-        saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered))
+        saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered), maxPerf: maxPerf, avgPerf: avgPerf, minPerf: minPerf)
+        
+        // show alert
+        let msg = "Max perfection: \(maxPerf)\nAvg perfection: \(avgPerf)\nMin perfection: \(minPerf)"
+        showPossibilityAlert(sortedAry, message: msg)
     }
     
     func actionDone() {
@@ -486,28 +509,28 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         return nil
     }
     
-    func showPossibilityAlert(data: [PokemonStats]) {
+    func getPerfections(data: [PokemonStats]) -> [String: String] {
         
-        // sort
-        let sortedAry = data.sort(>)
-        
-        let max = (sortedAry.first! as PokemonStats).perfection
-        let min = (sortedAry.last! as PokemonStats).perfection
-        let avg = PkmIVCalc.instance.getAvgPrefection(sortedAry)
+        let max = (data.first! as PokemonStats).perfection
+        let min = (data.last! as PokemonStats).perfection
+        let avg = PkmIVCalc.instance.getAvgPrefection(data)
         
         // calculate max avg min prefection %
-        let maxPref = PkmIVCalc.instance.getPrefPercentageStr(max)
-        let minPref = PkmIVCalc.instance.getPrefPercentageStr(min)
-        let avgPref = PkmIVCalc.instance.getPrefPercentageStr(avg)
+        let maxPerf = PkmIVCalc.instance.getPrefPercentageStr(max)
+        let minPerf = PkmIVCalc.instance.getPrefPercentageStr(min)
+        let avgPerf = PkmIVCalc.instance.getPrefPercentageStr(avg)
         
-        let msg = "Max prefection: \(maxPref)\nAvg prefection: \(avgPref)\nMin prefection: \(minPref)"
+        return ["maxPerf": maxPerf, "minPerf": minPerf, "avgPerf": avgPerf]
+    }
+    
+    func showPossibilityAlert(data: [PokemonStats], message: String) {
         
-        let alert = UIAlertController(title: "Info", message: msg, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Info", message: message, preferredStyle: .Alert)
         let actOk = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         let actDetail = UIAlertAction(title: "Detail", style: .Default) { (alert) in
             // to detail view
             if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PkmPossibleStatsViewController") as? PkmPossibleStatsViewController {
-                vc.dataSource = sortedAry
+                vc.dataSource = data
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -517,9 +540,22 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func saveToHistory(name: String, img: String, cp: Int, hp: Int, stardust: Int, powered: Int) {
+    // MARK: - Save
+    
+    func saveToHistory(name: String, img: String, cp: Int, hp: Int, stardust: Int, powered: Int, maxPerf: String, avgPerf: String, minPerf: String) {
         
-        let param = ["name": name, "image": img, "cp": cp, "hp": hp, "stardust": stardust, "powered": powered]
+        let param = [
+            "name": name,
+            "image": img,
+            "cp": cp,
+            "hp": hp,
+            "stardust": stardust,
+            "powered": powered,
+            "maxPerf": maxPerf,
+            "avgPerf": avgPerf,
+            "minPerf": minPerf
+        ]
+        
         manager.insertCalcPkmHistoryByParam(param, completionHandler: nil)
     }
 }

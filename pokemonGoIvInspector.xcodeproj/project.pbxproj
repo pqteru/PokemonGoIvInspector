@@ -14,6 +14,7 @@
 		7A63BB251D602AC80011426C /* level-to-cpm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB241D602AC70011426C /* level-to-cpm.json */; };
 		7A63BB271D603A420011426C /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB261D603A420011426C /* levels.json */; };
 		7A63BB291D603B080011426C /* PokemonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB281D603B080011426C /* PokemonLevel.swift */; };
+		7A7B6FD51D64A3F300FBADAC /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B6FD41D64A3F300FBADAC /* DateUtils.swift */; };
 		7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8476491D622FF50023D7FF /* GoogleService-Info.plist */; };
 		8B1781D81D644433004FDFEF /* CalcPkmHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1781D71D644433004FDFEF /* CalcPkmHistory.swift */; };
 		8B1781DA1D644616004FDFEF /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1781D91D644616004FDFEF /* Property.swift */; };
@@ -71,6 +72,7 @@
 		7A63BB241D602AC70011426C /* level-to-cpm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "level-to-cpm.json"; sourceTree = "<group>"; };
 		7A63BB261D603A420011426C /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
 		7A63BB281D603B080011426C /* PokemonLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonLevel.swift; sourceTree = "<group>"; };
+		7A7B6FD41D64A3F300FBADAC /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		7A8476491D622FF50023D7FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1781D71D644433004FDFEF /* CalcPkmHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcPkmHistory.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				8B1781D91D644616004FDFEF /* Property.swift */,
 				8B9C81CF1D5B1248005739EF /* AutoCompleteView.swift */,
 				7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */,
+				7A7B6FD41D64A3F300FBADAC /* DateUtils.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B7437D91D61C0DE00288716 /* PokemonStats.swift in Sources */,
+				7A7B6FD51D64A3F300FBADAC /* DateUtils.swift in Sources */,
 				8B1781DD1D64585E004FDFEF /* CalcPkmHistoryManager.swift in Sources */,
 				8B1781DF1D64588F004FDFEF /* BaseManager.swift in Sources */,
 				8B9C81CE1D5B0A61005739EF /* Constants.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,18 +9,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CalcPkmHistoryCell" customModule="pokemonGoIvInspector" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="viD-ev-vm9">
-                    <rect key="frame" x="8" y="8" width="64" height="64"/>
+                    <rect key="frame" x="8" y="18" width="64" height="64"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="6i1-1c-J7q"/>
                         <constraint firstAttribute="width" constant="64" id="tHe-f8-yst"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uob-Hf-cXT">
-                    <rect key="frame" x="80" y="8" width="512" height="64"/>
+                    <rect key="frame" x="80" y="8" width="512" height="84"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcF-Pj-2SG">
                             <rect key="frame" x="0.0" y="0.0" width="512" height="21"/>
@@ -52,13 +52,22 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRe-vR-SQk">
+                            <rect key="frame" x="0.0" y="62" width="512" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="hML-VR-us8" firstAttribute="width" secondItem="KBH-Kd-4gR" secondAttribute="width" id="1LI-SW-hAi"/>
                         <constraint firstItem="KBH-Kd-4gR" firstAttribute="bottom" secondItem="uob-Hf-cXT" secondAttribute="bottomMargin" id="6az-H9-uUO"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="mRe-vR-SQk" secondAttribute="trailing" id="7NZ-dN-ay4"/>
                         <constraint firstItem="KBH-Kd-4gR" firstAttribute="leading" secondItem="uob-Hf-cXT" secondAttribute="leadingMargin" id="7Rj-QZ-wut"/>
+                        <constraint firstItem="mRe-vR-SQk" firstAttribute="leading" secondItem="uob-Hf-cXT" secondAttribute="leadingMargin" id="8am-qn-AQN"/>
                         <constraint firstItem="Zpe-eS-Iyi" firstAttribute="centerY" secondItem="5Cg-Pd-68g" secondAttribute="centerY" id="9HK-L0-iIa"/>
+                        <constraint firstItem="mRe-vR-SQk" firstAttribute="top" secondItem="KBH-Kd-4gR" secondAttribute="bottom" constant="3" id="Efe-ea-h5D"/>
                         <constraint firstItem="5Cg-Pd-68g" firstAttribute="leading" secondItem="uob-Hf-cXT" secondAttribute="leadingMargin" id="SM9-7O-Wfn"/>
                         <constraint firstItem="UcF-Pj-2SG" firstAttribute="top" secondItem="uob-Hf-cXT" secondAttribute="topMargin" id="SUd-L8-Gw2"/>
                         <constraint firstItem="KBH-Kd-4gR" firstAttribute="top" secondItem="5Cg-Pd-68g" secondAttribute="bottom" constant="3" id="TFz-eP-oZW"/>
@@ -97,6 +106,7 @@
                 <outlet property="labelCp" destination="5Cg-Pd-68g" id="bBx-DH-scn"/>
                 <outlet property="labelHp" destination="Zpe-eS-Iyi" id="o5T-Fg-ERH"/>
                 <outlet property="labelName" destination="UcF-Pj-2SG" id="OZP-2r-1BX"/>
+                <outlet property="labelPerf" destination="mRe-vR-SQk" id="dxN-3w-aEC"/>
                 <outlet property="labelPowered" destination="hML-VR-us8" id="Dfn-Pa-wtt"/>
                 <outlet property="labelStardust" destination="KBH-Kd-4gR" id="1cN-oc-8Pf"/>
                 <outlet property="pkmImage" destination="viD-ev-vm9" id="hbZ-ed-HTr"/>

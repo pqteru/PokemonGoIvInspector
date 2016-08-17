@@ -49,9 +49,12 @@ class CalcPkmHistoryManager: BaseManager {
         obj.hp = param["hp"] as! Int
         obj.stardust = param["stardust"] as! Int
         obj.powered = param["powered"] as! Int
+        obj.maxPerf = param["maxPerf"] as! String
+        obj.avgPerf = param["avgPerf"] as! String
+        obj.minPerf = param["minPerf"] as! String
         
         // setup calc time
-        //obj.calc_at =
+        obj.calc_at = DateUtils.sharedInstance.currentDate()
         
         self.completionHandler = completionHandler
         self.saveObject()
@@ -64,10 +67,15 @@ class CalcPkmHistoryManager: BaseManager {
     
     func deleteOldestCalcPkmHistory() {
         
+        log.debug("deleting last CalcPkmHistory...")
+        
         let fetchRequest = listHistoryFetchRequest()
         do {
-            var ary = try moc.executeFetchRequest(fetchRequest)
-            ary.removeLast()
+            let ary = try moc.executeFetchRequest(fetchRequest)
+            let obj = ary.last as! CalcPkmHistory
+            moc.deleteObject(obj)
+            self.saveObject()
+            
         } catch let error as NSError {
             log.error("error: \(error.localizedDescription)")
         }

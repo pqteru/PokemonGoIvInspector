@@ -18,6 +18,9 @@ class CalcPkmHistory: NSManagedObject, PropertyNames {
     @NSManaged var calc_at: String
     @NSManaged var image: String
     @NSManaged var powered: Int
+    @NSManaged var maxPerf: String
+    @NSManaged var avgPerf: String
+    @NSManaged var minPerf: String
     
     func toDict() -> [String: AnyObject] {
         
@@ -29,6 +32,9 @@ class CalcPkmHistory: NSManagedObject, PropertyNames {
         dict.updateValue(self.calc_at, forKey: "calc_at")
         dict.updateValue(self.image, forKey: "image")
         dict.updateValue(self.powered, forKey: "powered")
+        dict.updateValue(self.maxPerf, forKey: "maxPerf")
+        dict.updateValue(self.avgPerf, forKey: "avgPerf")
+        dict.updateValue(self.minPerf, forKey: "minPerf")
         
         return dict
     }

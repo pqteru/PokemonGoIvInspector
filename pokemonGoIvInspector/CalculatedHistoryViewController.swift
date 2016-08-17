@@ -98,6 +98,7 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
         
         if let sections = frc!.sections {
             let sectionInfo = sections[section]
+            log.debug("rows count: \(sectionInfo.numberOfObjects)")
             return sectionInfo.numberOfObjects
         }
         return 0
@@ -105,7 +106,7 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> CalcPkmHistoryCell {
         
-        log.debug("")
+        //log.debug("")
         
         let cell = tableView.dequeueReusableCellWithIdentifier(CalculatedHistoryViewController.cellIdentifier) as! CalcPkmHistoryCell
         configureCell(cell, atIndexPath: indexPath)
@@ -116,19 +117,22 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
         
         // Fetch Record
         let record = frc!.objectAtIndexPath(indexPath) as! CalcPkmHistory
-        log.debug("record: \(record)")
+        //log.debug("record: \(record)")
         
         // Update Cell
         cell.pkmImage.image = UIImage(named: record.image)
-        cell.labelName.text = String("\(record.name.lowercaseString)")
+        cell.labelName.text = String("\(record.name.lowercaseString.uppercaseFirst)")
         cell.labelCp.text = String("CP: \(record.cp)")
         cell.labelHp.text = String("HP: \(record.hp)")
         cell.labelStardust.text = String("Stardust: \(record.stardust)")
         cell.labelPowered.text = String("Powered: \(Bool(record.powered) == false ? "NO" : "YES")")
+        
+        let str = "Max: \(record.maxPerf) Avg: \(record.avgPerf) Min: \(record.minPerf)"
+        cell.labelPerf.text = str
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 80.0
+        return 100.0
     }
 }

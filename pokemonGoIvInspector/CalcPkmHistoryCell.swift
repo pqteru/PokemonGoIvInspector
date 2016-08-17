@@ -16,4 +16,5 @@ class CalcPkmHistoryCell: UITableViewCell {
     @IBOutlet weak var labelStardust: UILabel!
     @IBOutlet weak var labelHp: UILabel!
     @IBOutlet weak var labelPowered: UILabel!
+    @IBOutlet weak var labelPerf: UILabel!
 }
