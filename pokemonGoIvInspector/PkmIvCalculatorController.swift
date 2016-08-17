@@ -284,7 +284,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         let pkmName = self.pokemonSelection.text!.uppercaseString
         
-        guard let pkm = readPKMJson(pkmName) as Pokemon! else {
+        guard let pkm = readPKMJson(pkmName) as Pokemon? else {
             let alert = UIAlertController(message: "Cannot find any pokemon!")
             self.presentViewController(alert, animated: true, completion: nil)
             return
@@ -507,9 +507,12 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
                         return name == pkmName
                     })
                     
-                    log.debug("obj: \(obj[0].1.description)")
-                    
-                    return Mapper<Pokemon>().map(obj[0].1.description)!
+                    if obj.count > 0 {
+                        log.debug("obj: \(obj[0].1.description)")
+                        return Mapper<Pokemon>().map(obj[0].1.description)!
+                    } else {
+                        return nil
+                    }
                     
                 } else {
                     print("could not get json from file, make sure that file contains valid json.")

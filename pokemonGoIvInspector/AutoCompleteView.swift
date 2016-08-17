@@ -65,7 +65,6 @@ class AutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSource 
         log.debug("")
         
         let matches = self.source!.filter({(item: String) -> Bool in
-            
             let stringMatch = item.lowercaseString.rangeOfString(subString.lowercaseString)
             return stringMatch != nil ? true : false
         })
@@ -81,7 +80,12 @@ class AutoCompleteView: UITableView, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         log.debug("autocmpData.count: \(options.count)")
+        if options.count > 0 {
+            self.hidden = false
+            return options.count
+        }
         
+        self.hidden = true
         return options.count
     }
     
