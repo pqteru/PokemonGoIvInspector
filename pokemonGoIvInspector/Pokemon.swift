@@ -16,6 +16,8 @@ class Pokemon: Mappable {
     var type2: String?
     var stats: [String: AnyObject] = [:]
     var image: String?
+    var moves1: [PokemonMove]?
+    var moves2: [PokemonMove]?
     
     required init?(_ map: Map) {
         
@@ -29,5 +31,7 @@ class Pokemon: Mappable {
         type2 <- map["type2"]
         stats <- map["stats"]
         image <- map["image"]
+        moves1 <- map["moves1"]
+        moves2 <- map["moves2"]
     }
 }

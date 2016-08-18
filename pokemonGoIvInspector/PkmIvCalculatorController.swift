@@ -293,6 +293,11 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
+        log.debug("pkm: \(pkm.moves1)")
+        
+        for move: PokemonMove in pkm.moves1! {
+            log.debug(move.name)
+        }
         
         let cp = Double(self.cpTextField.text!)!
         let hp = Int(self.hpTextField.text!)!
@@ -324,8 +329,11 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         // save to core data
         saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered), maxPerf: maxPerf, avgPerf: avgPerf, minPerf: minPerf)
         
+        let move = (pkm.moves1?.first)! as PokemonMove
+        let moveMsg = move.name
+        
         // show alert
-        let msg = "Max perfection: \(maxPerf)\nAvg perfection: \(avgPerf)\nMin perfection: \(minPerf)"
+        let msg = "Max perfection: \(maxPerf)\nAvg perfection: \(avgPerf)\nMin perfection: \(minPerf)\nMove: \(moveMsg)"
         showPossibilityAlert(sortedAry, message: msg)
     }
     
@@ -547,7 +555,7 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     
     func showPossibilityAlert(data: [PokemonStats], message: String) {
         
-        let alert = UIAlertController(title: "Info", message: message, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "perfection Info", message: message, preferredStyle: .Alert)
         let actOk = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         let actDetail = UIAlertAction(title: "Detail", style: .Default) { (alert) in
             // to detail view
