@@ -9,6 +9,7 @@
       "attack": 126,
       "defense": 126
     },
+    "image": "001 - ymJUN7U",
     "candy": 25,
     "family": "FAMILY_BULBASAUR",
     "moves1": [
@@ -69,6 +70,7 @@
       "attack": 156,
       "defense": 158
     },
+    "image": "002 - DCaYciP",
     "candy": 100,
     "family": "FAMILY_BULBASAUR",
     "moves1": [
@@ -129,6 +131,7 @@
       "attack": 198,
       "defense": 200
     },
+    "image": "003 - 1gHPLm5",
     "family": "FAMILY_BULBASAUR",
     "moves1": [
       {
@@ -187,6 +190,7 @@
       "attack": 128,
       "defense": 108
     },
+    "image": "004 - MNzvfqa",
     "candy": 25,
     "family": "FAMILY_CHARMANDER",
     "moves1": [
@@ -246,6 +250,7 @@
       "attack": 160,
       "defense": 140
     },
+    "image": "005 - 90S0I9j",
     "candy": 100,
     "family": "FAMILY_CHARMANDER",
     "moves1": [
@@ -306,6 +311,7 @@
       "attack": 212,
       "defense": 182
     },
+    "image": "006 - r8ZF3pM",
     "family": "FAMILY_CHARMANDER",
     "moves1": [
       {
@@ -364,6 +370,7 @@
       "attack": 112,
       "defense": 142
     },
+    "image": "007 - ycqwZ7F",
     "candy": 25,
     "family": "FAMILY_SQUIRTLE",
     "moves1": [
@@ -423,6 +430,7 @@
       "attack": 144,
       "defense": 176
     },
+    "image": "008 - UutwOLy",
     "candy": 100,
     "family": "FAMILY_SQUIRTLE",
     "moves1": [
@@ -482,6 +490,7 @@
       "attack": 186,
       "defense": 222
     },
+    "image": "009 - 5S3V3Ma",
     "family": "FAMILY_SQUIRTLE",
     "moves1": [
       {
@@ -540,6 +549,7 @@
       "attack": 62,
       "defense": 66
     },
+    "image": "010 - EVIapxI",
     "candy": 12,
     "family": "FAMILY_CATERPIE",
     "moves1": [
@@ -581,6 +591,7 @@
       "attack": 56,
       "defense": 86
     },
+    "image": "011 - RJJ4006",
     "candy": 50,
     "family": "FAMILY_CATERPIE",
     "moves1": [
@@ -623,6 +634,7 @@
       "attack": 144,
       "defense": 144
     },
+    "image": "012 - fWgniBU",
     "family": "FAMILY_CATERPIE",
     "moves1": [
       {
@@ -682,6 +694,7 @@
       "attack": 68,
       "defense": 64
     },
+    "image": "013 - DTsVdfw",
     "candy": 12,
     "family": "FAMILY_WEEDLE",
     "moves1": [
@@ -724,6 +737,7 @@
       "attack": 62,
       "defense": 82
     },
+    "image": "014 - XfTXZ2D",
     "candy": 50,
     "family": "FAMILY_WEEDLE",
     "moves1": [
@@ -766,6 +780,7 @@
       "attack": 144,
       "defense": 130
     },
+    "image": "015 - vs84aso",
     "family": "FAMILY_WEEDLE",
     "moves1": [
       {
@@ -825,6 +840,7 @@
       "attack": 94,
       "defense": 90
     },
+    "image": "016 - Cj3S60J",
     "candy": 12,
     "family": "FAMILY_PIDGEY",
     "moves1": [
@@ -885,6 +901,7 @@
       "attack": 126,
       "defense": 122
     },
+    "image": "017 - YrqNkg7",
     "candy": 50,
     "family": "FAMILY_PIDGEY",
     "moves1": [
@@ -945,6 +962,7 @@
       "attack": 170,
       "defense": 166
     },
+    "image": "018 - T9T6T30",
     "family": "FAMILY_PIDGEY",
     "moves1": [
       {
@@ -1003,6 +1021,7 @@
       "attack": 92,
       "defense": 86
     },
+    "image": "019 - iQXgSxJ",
     "candy": 25,
     "family": "FAMILY_RATTATA",
     "moves1": [
@@ -1062,6 +1081,7 @@
       "attack": 146,
       "defense": 150
     },
+    "image": "020 - HSCJyEo",
     "family": "FAMILY_RATTATA",
     "moves1": [
       {
@@ -1121,6 +1141,7 @@
       "attack": 102,
       "defense": 78
     },
+    "image": "021 - ureVsLT",
     "candy": 50,
     "family": "FAMILY_SPEAROW",
     "moves1": [
@@ -1181,6 +1202,7 @@
       "attack": 168,
       "defense": 146
     },
+    "image": "022 - i0w85Sz",
     "family": "FAMILY_SPEAROW",
     "moves1": [
       {
@@ -1239,6 +1261,7 @@
       "attack": 112,
       "defense": 112
     },
+    "image": "023 - aUgcmbF",
     "candy": 50,
     "family": "FAMILY_EKANS",
     "moves1": [
@@ -1298,6 +1321,7 @@
       "attack": 166,
       "defense": 166
     },
+    "image": "024 - br8pFPd",
     "family": "FAMILY_EKANS",
     "moves1": [
       {
@@ -1356,6 +1380,7 @@
       "attack": 124,
       "defense": 108
     },
+    "image": "025 - BnOQ18z",
     "candy": 50,
     "family": "FAMILY_PIKACHU",
     "moves1": [
@@ -1415,6 +1440,7 @@
       "attack": 200,
       "defense": 154
     },
+    "image": "026 - 2Sp8593",
     "family": "FAMILY_PIKACHU",
     "moves1": [
       {
@@ -1473,6 +1499,7 @@
       "attack": 90,
       "defense": 114
     },
+    "image": "027 - EGJWEBk",
     "candy": 50,
     "family": "FAMILY_SANDSHREW",
     "moves1": [
@@ -1532,6 +1559,7 @@
       "attack": 150,
       "defense": 172
     },
+    "image": "028 - A6ECbwQ",
     "family": "FAMILY_SANDSHREW",
     "moves1": [
       {
@@ -1590,6 +1618,7 @@
       "attack": 100,
       "defense": 104
     },
+    "image": "029 - vqNwhzl",
     "candy": 25,
     "family": "FAMILY_NIDORAN_FEMALE",
     "moves1": [
@@ -1649,6 +1678,7 @@
       "attack": 132,
       "defense": 136
     },
+    "image": "030 - nTVQ75H",
     "candy": 100,
     "family": "FAMILY_NIDORAN_FEMALE",
     "moves1": [
@@ -1709,6 +1739,7 @@
       "attack": 184,
       "defense": 190
     },
+    "image": "031 - NzXuCD9",
     "family": "FAMILY_NIDORAN_FEMALE",
     "moves1": [
       {
@@ -1767,6 +1798,7 @@
       "attack": 110,
       "defense": 94
     },
+    "image": "032 - iENSWu9",
     "candy": 25,
     "family": "FAMILY_NIDORAN_MALE",
     "moves1": [
@@ -1826,6 +1858,7 @@
       "attack": 142,
       "defense": 128
     },
+    "image": "033 - hARIT9D",
     "candy": 100,
     "family": "FAMILY_NIDORAN_MALE",
     "moves1": [
@@ -1886,6 +1919,7 @@
       "attack": 204,
       "defense": 170
     },
+    "image": "034 - uFZqzQU",
     "family": "FAMILY_NIDORAN_MALE",
     "moves1": [
       {
@@ -1944,6 +1978,7 @@
       "attack": 116,
       "defense": 124
     },
+    "image": "035 - O9BA2uQ",
     "candy": 50,
     "family": "FAMILY_CLEFAIRY",
     "moves1": [
@@ -2003,6 +2038,7 @@
       "attack": 178,
       "defense": 178
     },
+    "image": "036 - MCJj790",
     "family": "FAMILY_CLEFAIRY",
     "moves1": [
       {
@@ -2061,6 +2097,7 @@
       "attack": 106,
       "defense": 118
     },
+    "image": "037 - u1VR5u0",
     "candy": 50,
     "family": "FAMILY_VULPIX",
     "moves1": [
@@ -2120,6 +2157,7 @@
       "attack": 176,
       "defense": 194
     },
+    "image": "038 - SImNjAx",
     "family": "FAMILY_VULPIX",
     "moves1": [
       {
@@ -2179,6 +2217,7 @@
       "attack": 98,
       "defense": 54
     },
+    "image": "039 - dF0ZRCl",
     "candy": 50,
     "family": "FAMILY_JIGGLYPUFF",
     "moves1": [
@@ -2239,6 +2278,7 @@
       "attack": 168,
       "defense": 108
     },
+    "image": "040 - e05K5Tq",
     "family": "FAMILY_JIGGLYPUFF",
     "moves1": [
       {
@@ -2298,6 +2338,7 @@
       "attack": 88,
       "defense": 90
     },
+    "image": "041 - zTdCLkq",
     "candy": 50,
     "family": "FAMILY_ZUBAT",
     "moves1": [
@@ -2358,6 +2399,7 @@
       "attack": 164,
       "defense": 164
     },
+    "image": "042 - zkfElVm",
     "family": "FAMILY_ZUBAT",
     "moves1": [
       {
@@ -2417,6 +2459,7 @@
       "attack": 134,
       "defense": 130
     },
+    "image": "043 - aFXJNxI",
     "candy": 25,
     "family": "FAMILY_ODDISH",
     "moves1": [
@@ -2477,6 +2520,7 @@
       "attack": 162,
       "defense": 158
     },
+    "image": "044 - jFWbtsn",
     "candy": 100,
     "family": "FAMILY_ODDISH",
     "moves1": [
@@ -2537,6 +2581,7 @@
       "attack": 202,
       "defense": 190
     },
+    "image": "045 - eBSLE2F",
     "family": "FAMILY_ODDISH",
     "moves1": [
       {
@@ -2596,6 +2641,7 @@
       "attack": 122,
       "defense": 120
     },
+    "image": "046 - UI9IJYa",
     "candy": 50,
     "family": "FAMILY_PARAS",
     "moves1": [
@@ -2656,6 +2702,7 @@
       "attack": 162,
       "defense": 170
     },
+    "image": "047 - rQOKlaQ",
     "family": "FAMILY_PARAS",
     "moves1": [
       {
@@ -2715,6 +2762,7 @@
       "attack": 108,
       "defense": 118
     },
+    "image": "048 - dJL31dl",
     "candy": 50,
     "family": "FAMILY_VENONAT",
     "moves1": [
@@ -2775,6 +2823,7 @@
       "attack": 172,
       "defense": 154
     },
+    "image": "049 - AKWhjP0",
     "family": "FAMILY_VENONAT",
     "moves1": [
       {
@@ -2833,6 +2882,7 @@
       "attack": 108,
       "defense": 86
     },
+    "image": "050 - 5iv8hp5",
     "candy": 50,
     "family": "FAMILY_DIGLETT",
     "moves1": [
@@ -2892,6 +2942,7 @@
       "attack": 148,
       "defense": 140
     },
+    "image": "051 - WtqvAfR",
     "family": "FAMILY_DIGLETT",
     "moves1": [
       {
@@ -2950,6 +3001,7 @@
       "attack": 104,
       "defense": 94
     },
+    "image": "052 - lVJTzjB",
     "candy": 50,
     "family": "FAMILY_MEOWTH",
     "moves1": [
@@ -3009,6 +3061,7 @@
       "attack": 156,
       "defense": 146
     },
+    "image": "053 - NQmKZBk",
     "family": "FAMILY_MEOWTH",
     "moves1": [
       {
@@ -3067,6 +3120,7 @@
       "attack": 132,
       "defense": 112
     },
+    "image": "054 - 5oKgqAg",
     "candy": 50,
     "family": "FAMILY_PSYDUCK",
     "moves1": [
@@ -3126,6 +3180,7 @@
       "attack": 194,
       "defense": 176
     },
+    "image": "055 - CmRVgp9",
     "family": "FAMILY_PSYDUCK",
     "moves1": [
       {
@@ -3184,6 +3239,7 @@
       "attack": 122,
       "defense": 96
     },
+    "image": "056 - QVTM4EC",
     "candy": 50,
     "family": "FAMILY_MANKEY",
     "moves1": [
@@ -3243,6 +3299,7 @@
       "attack": 178,
       "defense": 150
     },
+    "image": "057 - iCw1Bwp",
     "family": "FAMILY_MANKEY",
     "moves1": [
       {
@@ -3301,6 +3358,7 @@
       "attack": 156,
       "defense": 110
     },
+    "image": "058 - 3dp8P4x",
     "candy": 50,
     "family": "FAMILY_GROWLITHE",
     "moves1": [
@@ -3360,6 +3418,7 @@
       "attack": 230,
       "defense": 180
     },
+    "image": "059 - TsETbW4",
     "family": "FAMILY_GROWLITHE",
     "moves1": [
       {
@@ -3418,6 +3477,7 @@
       "attack": 108,
       "defense": 98
     },
+    "image": "060 - 0KDpuwc",
     "candy": 25,
     "family": "FAMILY_POLIWAG",
     "moves1": [
@@ -3477,6 +3537,7 @@
       "attack": 132,
       "defense": 132
     },
+    "image": "061 - FHrTMQ7",
     "candy": 100,
     "family": "FAMILY_POLIWAG",
     "moves1": [
@@ -3537,6 +3598,7 @@
       "attack": 180,
       "defense": 202
     },
+    "image": "062 - kdRYTTA",
     "family": "FAMILY_POLIWAG",
     "moves1": [
       {
@@ -3595,6 +3657,7 @@
       "attack": 110,
       "defense": 76
     },
+    "image": "063 - HVf31Nt",
     "candy": 25,
     "family": "FAMILY_ABRA",
     "moves1": [
@@ -3646,6 +3709,7 @@
       "attack": 150,
       "defense": 112
     },
+    "image": "064 - HTDMVDu",
     "candy": 100,
     "family": "FAMILY_ABRA",
     "moves1": [
@@ -3705,6 +3769,7 @@
       "attack": 186,
       "defense": 152
     },
+    "image": "065 - lWuakd3",
     "family": "FAMILY_ABRA",
     "moves1": [
       {
@@ -3763,6 +3828,7 @@
       "attack": 118,
       "defense": 96
     },
+    "image": "066 - 2gOvfj7",
     "candy": 25,
     "family": "FAMILY_MACHOP",
     "moves1": [
@@ -3822,6 +3888,7 @@
       "attack": 154,
       "defense": 144
     },
+    "image": "067 - nlVUpZ1",
     "candy": 100,
     "family": "FAMILY_MACHOP",
     "moves1": [
@@ -3881,6 +3948,7 @@
       "attack": 198,
       "defense": 180
     },
+    "image": "068 - RkZ7x9t",
     "family": "FAMILY_MACHOP",
     "moves1": [
       {
@@ -3940,6 +4008,7 @@
       "attack": 158,
       "defense": 78
     },
+    "image": "069 - Ud6kfQB",
     "candy": 25,
     "family": "FAMILY_BELLSPROUT",
     "moves1": [
@@ -4000,6 +4069,7 @@
       "attack": 190,
       "defense": 110
     },
+    "image": "070 - 7Oy1Y72",
     "candy": 100,
     "family": "FAMILY_BELLSPROUT",
     "moves1": [
@@ -4060,6 +4130,7 @@
       "attack": 222,
       "defense": 152
     },
+    "image": "071 - biJh43I",
     "family": "FAMILY_BELLSPROUT",
     "moves1": [
       {
@@ -4119,6 +4190,7 @@
       "attack": 106,
       "defense": 136
     },
+    "image": "072 - PabjRP7",
     "candy": 50,
     "family": "FAMILY_TENTACOOL",
     "moves1": [
@@ -4179,6 +4251,7 @@
       "attack": 170,
       "defense": 196
     },
+    "image": "073 - 7G8pusr",
     "family": "FAMILY_TENTACOOL",
     "moves1": [
       {
@@ -4238,6 +4311,7 @@
       "attack": 106,
       "defense": 118
     },
+    "image": "074 - myxLsuy",
     "candy": 25,
     "family": "FAMILY_GEODUDE",
     "moves1": [
@@ -4298,6 +4372,7 @@
       "attack": 142,
       "defense": 156
     },
+    "image": "075 - gj6hTsv",
     "candy": 100,
     "family": "FAMILY_GEODUDE",
     "moves1": [
@@ -4358,6 +4433,7 @@
       "attack": 176,
       "defense": 198
     },
+    "image": "076 - Ov3Xi5D",
     "family": "FAMILY_GEODUDE",
     "moves1": [
       {
@@ -4416,6 +4492,7 @@
       "attack": 168,
       "defense": 138
     },
+    "image": "077 - Dpsrtbs",
     "candy": 50,
     "family": "FAMILY_PONYTA",
     "moves1": [
@@ -4475,6 +4552,7 @@
       "attack": 200,
       "defense": 170
     },
+    "image": "078 - x0d1S21",
     "family": "FAMILY_PONYTA",
     "moves1": [
       {
@@ -4534,6 +4612,7 @@
       "attack": 110,
       "defense": 110
     },
+    "image": "079 - 0OOeyrp",
     "candy": 50,
     "family": "FAMILY_SLOWPOKE",
     "moves1": [
@@ -4594,6 +4673,7 @@
       "attack": 184,
       "defense": 198
     },
+    "image": "080 - Htf87t2",
     "family": "FAMILY_SLOWPOKE",
     "moves1": [
       {
@@ -4653,6 +4733,7 @@
       "attack": 128,
       "defense": 138
     },
+    "image": "081 - 5zi8vAG",
     "candy": 50,
     "family": "FAMILY_MAGNEMITE",
     "moves1": [
@@ -4713,6 +4794,7 @@
       "attack": 186,
       "defense": 180
     },
+    "image": "082 - BdESZy9",
     "family": "FAMILY_MAGNEMITE",
     "moves1": [
       {
@@ -4772,6 +4854,7 @@
       "attack": 138,
       "defense": 132
     },
+    "image": "083 - XnqjFsM",
     "family": "FAMILY_FARFETCHD",
     "moves1": [
       {
@@ -4831,6 +4914,7 @@
       "attack": 126,
       "defense": 96
     },
+    "image": "084 - eqOCGrR",
     "candy": 50,
     "family": "FAMILY_DODUO",
     "moves1": [
@@ -4891,6 +4975,7 @@
       "attack": 182,
       "defense": 150
     },
+    "image": "085 - cbqTgrp",
     "family": "FAMILY_DODUO",
     "moves1": [
       {
@@ -4949,6 +5034,7 @@
       "attack": 104,
       "defense": 138
     },
+    "image": "086 - 2mNFvL0",
     "candy": 50,
     "family": "FAMILY_SEEL",
     "moves1": [
@@ -5009,6 +5095,7 @@
       "attack": 156,
       "defense": 192
     },
+    "image": "087 - MgXvgJW",
     "family": "FAMILY_SEEL",
     "moves1": [
       {
@@ -5067,6 +5154,7 @@
       "attack": 124,
       "defense": 110
     },
+    "image": "088 - kh204Iq",
     "candy": 50,
     "family": "FAMILY_GRIMER",
     "moves1": [
@@ -5126,6 +5214,7 @@
       "attack": 180,
       "defense": 188
     },
+    "image": "089 - 8NhsOW6",
     "family": "FAMILY_GRIMER",
     "moves1": [
       {
@@ -5184,6 +5273,7 @@
       "attack": 120,
       "defense": 112
     },
+    "image": "090 - Oc1j106",
     "candy": 50,
     "family": "FAMILY_SHELLDER",
     "moves1": [
@@ -5244,6 +5334,7 @@
       "attack": 196,
       "defense": 196
     },
+    "image": "091 - 7kFnrm1",
     "family": "FAMILY_SHELLDER",
     "moves1": [
       {
@@ -5303,6 +5394,7 @@
       "attack": 136,
       "defense": 82
     },
+    "image": "092 - h3tg4lW",
     "candy": 25,
     "family": "FAMILY_GASTLY",
     "moves1": [
@@ -5363,6 +5455,7 @@
       "attack": 172,
       "defense": 118
     },
+    "image": "093 - jlvwXEU",
     "candy": 100,
     "family": "FAMILY_GASTLY",
     "moves1": [
@@ -5423,6 +5516,7 @@
       "attack": 204,
       "defense": 156
     },
+    "image": "094 - Hx8Sgw8",
     "family": "FAMILY_GASTLY",
     "moves1": [
       {
@@ -5482,6 +5576,7 @@
       "attack": 90,
       "defense": 186
     },
+    "image": "095 - 1yUYB2n",
     "family": "FAMILY_ONIX",
     "moves1": [
       {
@@ -5540,6 +5635,7 @@
       "attack": 104,
       "defense": 140
     },
+    "image": "096 - 63MYvi7",
     "candy": 50,
     "family": "FAMILY_DROWZEE",
     "moves1": [
@@ -5599,6 +5695,7 @@
       "attack": 162,
       "defense": 196
     },
+    "image": "097 - jWuW7sJ",
     "family": "FAMILY_DROWZEE",
     "moves1": [
       {
@@ -5657,6 +5754,7 @@
       "attack": 116,
       "defense": 110
     },
+    "image": "098 - GAHQ7ye",
     "candy": 50,
     "family": "FAMILY_KRABBY",
     "moves1": [
@@ -5716,6 +5814,7 @@
       "attack": 178,
       "defense": 168
     },
+    "image": "099 - qVMrynz",
     "family": "FAMILY_KRABBY",
     "moves1": [
       {
@@ -5774,6 +5873,7 @@
       "attack": 102,
       "defense": 124
     },
+    "image": "100 - GzAwoav",
     "candy": 50,
     "family": "FAMILY_VOLTORB",
     "moves1": [
@@ -5833,6 +5933,7 @@
       "attack": 150,
       "defense": 174
     },
+    "image": "101 - cBJ3w6x",
     "family": "FAMILY_VOLTORB",
     "moves1": [
       {
@@ -5892,6 +5993,7 @@
       "attack": 110,
       "defense": 132
     },
+    "image": "102 - 0129S9l",
     "candy": 50,
     "family": "FAMILY_EXEGGCUTE",
     "moves1": [
@@ -5944,6 +6046,7 @@
       "attack": 232,
       "defense": 164
     },
+    "image": "103 - cPkex57",
     "family": "FAMILY_EXEGGCUTE",
     "moves1": [
       {
@@ -6002,6 +6105,7 @@
       "attack": 102,
       "defense": 150
     },
+    "image": "104 - DVuaDMu",
     "candy": 50,
     "family": "FAMILY_CUBONE",
     "moves1": [
@@ -6061,6 +6165,7 @@
       "attack": 140,
       "defense": 202
     },
+    "image": "105 - vPxlv6k",
     "family": "FAMILY_CUBONE",
     "moves1": [
       {
@@ -6119,6 +6224,7 @@
       "attack": 148,
       "defense": 172
     },
+    "image": "106 - nW3smRT",
     "family": "FAMILY_HITMONLEE",
     "moves1": [
       {
@@ -6177,6 +6283,7 @@
       "attack": 138,
       "defense": 204
     },
+    "image": "107 - uoQXXro",
     "family": "FAMILY_HITMONCHAN",
     "moves1": [
       {
@@ -6244,6 +6351,7 @@
       "attack": 126,
       "defense": 160
     },
+    "image": "108 - Y41SRfo",
     "family": "FAMILY_LICKITUNG",
     "moves1": [
       {
@@ -6302,6 +6410,7 @@
       "attack": 136,
       "defense": 142
     },
+    "image": "109 - QvPXbfV",
     "candy": 50,
     "family": "FAMILY_KOFFING",
     "moves1": [
@@ -6361,6 +6470,7 @@
       "attack": 190,
       "defense": 198
     },
+    "image": "110 - kmgvhIM",
     "family": "FAMILY_KOFFING",
     "moves1": [
       {
@@ -6420,6 +6530,7 @@
       "attack": 110,
       "defense": 116
     },
+    "image": "111 - yvuf7wl",
     "candy": 50,
     "family": "FAMILY_RHYHORN",
     "moves1": [
@@ -6480,6 +6591,7 @@
       "attack": 166,
       "defense": 160
     },
+    "image": "112 - Oh56NFH",
     "family": "FAMILY_RHYHORN",
     "moves1": [
       {
@@ -6538,6 +6650,7 @@
       "attack": 40,
       "defense": 60
     },
+    "image": "113 - 6jyJFKm",
     "family": "FAMILY_CHANSEY",
     "moves1": [
       {
@@ -6596,6 +6709,7 @@
       "attack": 164,
       "defense": 152
     },
+    "image": "114 - MQQY2Bs",
     "family": "FAMILY_TANGELA",
     "moves1": [
       {
@@ -6646,6 +6760,7 @@
       "attack": 142,
       "defense": 178
     },
+    "image": "115 - YkfXVty",
     "family": "FAMILY_KANGASKHAN",
     "moves1": [
       {
@@ -6704,6 +6819,7 @@
       "attack": 122,
       "defense": 100
     },
+    "image": "116 - Zyo7iSM",
     "candy": 50,
     "family": "FAMILY_HORSEA",
     "moves1": [
@@ -6763,6 +6879,7 @@
       "attack": 176,
       "defense": 150
     },
+    "image": "117 - UFCJSbX",
     "family": "FAMILY_HORSEA",
     "moves1": [
       {
@@ -6821,6 +6938,7 @@
       "attack": 112,
       "defense": 126
     },
+    "image": "118 - TAvBe2F",
     "candy": 50,
     "family": "FAMILY_GOLDEEN",
     "moves1": [
@@ -6880,6 +6998,7 @@
       "attack": 172,
       "defense": 160
     },
+    "image": "119 - IdO4QIt",
     "family": "FAMILY_GOLDEEN",
     "moves1": [
       {
@@ -6938,6 +7057,7 @@
       "attack": 130,
       "defense": 128
     },
+    "image": "120 - D7XRVmV",
     "candy": 50,
     "family": "FAMILY_STARYU",
     "moves1": [
@@ -6998,6 +7118,7 @@
       "attack": 194,
       "defense": 192
     },
+    "image": "121 - y4HHa5B",
     "family": "FAMILY_STARYU",
     "moves1": [
       {
@@ -7057,6 +7178,7 @@
       "attack": 154,
       "defense": 196
     },
+    "image": "122 - 4zr2HZD",
     "family": "FAMILY_MR_MIME",
     "moves1": [
       {
@@ -7116,6 +7238,7 @@
       "attack": 176,
       "defense": 180
     },
+    "image": "123 - K0xPLzF",
     "family": "FAMILY_SCYTHER",
     "moves1": [
       {
@@ -7175,6 +7298,7 @@
       "attack": 172,
       "defense": 134
     },
+    "image": "124 - CX19LWc",
     "family": "FAMILY_JYNX",
     "moves1": [
       {
@@ -7233,6 +7357,7 @@
       "attack": 198,
       "defense": 160
     },
+    "image": "125 - hZRjJBy",
     "family": "FAMILY_ELECTABUZZ",
     "moves1": [
       {
@@ -7291,6 +7416,7 @@
       "attack": 214,
       "defense": 158
     },
+    "image": "126 - kpgf6qQ",
     "family": "FAMILY_MAGMAR",
     "moves1": [
       {
@@ -7349,6 +7475,7 @@
       "attack": 184,
       "defense": 186
     },
+    "image": "127 - OadxgAL",
     "family": "FAMILY_PINSIR",
     "moves1": [
       {
@@ -7407,6 +7534,7 @@
       "attack": 148,
       "defense": 184
     },
+    "image": "128 - hd6bopy",
     "family": "FAMILY_TAUROS",
     "moves1": [
       {
@@ -7465,6 +7593,7 @@
       "attack": 42,
       "defense": 84
     },
+    "image": "129 - SSuiC97",
     "candy": 400,
     "family": "FAMILY_MAGIKARP",
     "moves1": [
@@ -7498,6 +7627,7 @@
       "attack": 192,
       "defense": 196
     },
+    "image": "130 - mEEKjq9",
     "family": "FAMILY_MAGIKARP",
     "moves1": [
       {
@@ -7557,6 +7687,7 @@
       "attack": 186,
       "defense": 190
     },
+    "image": "131 - HYnhh6c",
     "family": "FAMILY_LAPRAS",
     "moves1": [
       {
@@ -7615,6 +7746,7 @@
       "attack": 110,
       "defense": 110
     },
+    "image": "132 - qYogFDI",
     "family": "FAMILY_DITTO",
     "moves1": [
       {
@@ -7647,6 +7779,7 @@
       "attack": 114,
       "defense": 128
     },
+    "image": "133 - HtUZ8Bl",
     "candy": 25,
     "family": "FAMILY_EEVEE",
     "moves1": [
@@ -7706,6 +7839,7 @@
       "attack": 186,
       "defense": 168
     },
+    "image": "134 - LfOzBxH",
     "family": "FAMILY_EEVEE",
     "moves1": [
       {
@@ -7756,6 +7890,7 @@
       "attack": 192,
       "defense": 174
     },
+    "image": "135 - BW3N08O",
     "family": "FAMILY_EEVEE",
     "moves1": [
       {
@@ -7806,6 +7941,7 @@
       "attack": 238,
       "defense": 178
     },
+    "image": "136 - cyZaJ07",
     "family": "FAMILY_EEVEE",
     "moves1": [
       {
@@ -7856,6 +7992,7 @@
       "attack": 156,
       "defense": 158
     },
+    "image": "137 - xInNIfi",
     "family": "FAMILY_PORYGON",
     "moves1": [
       {
@@ -7915,6 +8052,7 @@
       "attack": 132,
       "defense": 160
     },
+    "image": "138 - 8INXWPB",
     "candy": 50,
     "family": "FAMILY_OMANYTE",
     "moves1": [
@@ -7975,6 +8113,7 @@
       "attack": 180,
       "defense": 202
     },
+    "image": "139 - pvxTe5W",
     "family": "FAMILY_OMANYTE",
     "moves1": [
       {
@@ -8034,6 +8173,7 @@
       "attack": 148,
       "defense": 142
     },
+    "image": "140 - zdLO8tF",
     "candy": 50,
     "family": "FAMILY_KABUTO",
     "moves1": [
@@ -8094,6 +8234,7 @@
       "attack": 190,
       "defense": 190
     },
+    "image": "141 - XGrS6EC",
     "family": "FAMILY_KABUTO",
     "moves1": [
       {
@@ -8153,6 +8294,7 @@
       "attack": 182,
       "defense": 162
     },
+    "image": "142 - kpPbAYn",
     "family": "FAMILY_AERODACTYL",
     "moves1": [
       {
@@ -8211,6 +8353,7 @@
       "attack": 180,
       "defense": 180
     },
+    "image": "143 - tfBZzDZ",
     "family": "FAMILY_SNORLAX",
     "moves1": [
       {
@@ -8270,6 +8413,7 @@
       "attack": 198,
       "defense": 242
     },
+    "image": "144 - yvJwaWi",
     "family": "FAMILY_ARTICUNO",
     "moves1": [
       {
@@ -8321,6 +8465,7 @@
       "attack": 232,
       "defense": 194
     },
+    "image": "145 - 4r4lk4n",
     "family": "FAMILY_ZAPDOS",
     "moves1": [
       {
@@ -8372,6 +8517,7 @@
       "attack": 242,
       "defense": 194
     },
+    "image": "146 - r4V1Ycq",
     "family": "FAMILY_MOLTRES",
     "moves1": [
       {
@@ -8422,6 +8568,7 @@
       "attack": 128,
       "defense": 110
     },
+    "image": "147 - DD8XZKu",
     "candy": 25,
     "family": "FAMILY_DRATINI",
     "moves1": [
@@ -8473,6 +8620,7 @@
       "attack": 170,
       "defense": 152
     },
+    "image": "148 - Z8GSzJ6",
     "candy": 100,
     "family": "FAMILY_DRATINI",
     "moves1": [
@@ -8525,6 +8673,7 @@
       "attack": 250,
       "defense": 212
     },
+    "image": "149 - F24yDag",
     "family": "FAMILY_DRATINI",
     "moves1": [
       {
@@ -8583,6 +8732,7 @@
       "attack": 284,
       "defense": 202
     },
+    "image": "150 - aKrsM5t",
     "family": "FAMILY_MEWTWO",
     "moves1": [
       {
@@ -8641,6 +8791,7 @@
       "attack": 220,
       "defense": 220
     },
+    "image": "151 - 4vTIa6H",
     "family": "FAMILY_MEW",
     "moves1": [
       {

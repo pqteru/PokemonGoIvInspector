@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import XCGLogger
+import Firebase
 
 // global constant
 let log = XCGLogger.defaultInstance()
@@ -18,11 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         setupLog()
+        setupAppearance()
+        setupAnalytics()
         
         return true
     }
@@ -129,6 +131,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          log.error("An error occurred, but it's recoverable, just info about what happened")
          log.severe("A severe error occurred, we are likely about to crash now")
          */
+    }
+    
+    // MARK: - Google Firebase Analystic
+    
+    func setupAnalytics() {
+        
+        // setup GA
+        FIRApp.configure()
+        
+        #if DEBUG
+        FIRAnalyticsConfiguration.sharedInstance().setAnalyticsCollectionEnabled(false)
+        #else
+        FIRAnalyticsConfiguration.sharedInstance().setAnalyticsCollectionEnabled(true)
+        #endif
+    }
+    
+    func setupAppearance() {
+        
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 255, green: 204, blue: 0, alpha: 0)
     }
 
 }

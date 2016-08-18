@@ -10,6 +10,11 @@ import UIKit
 
 extension UIAlertController {
     
+    convenience init(title: String?, message: String?) {
+        self.init(title: title, message: message, preferredStyle: .Alert)
+        self.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+    }
+    
     convenience init(message: String?) {
         self.init(title: nil, message: message, preferredStyle: .Alert)
         self.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))

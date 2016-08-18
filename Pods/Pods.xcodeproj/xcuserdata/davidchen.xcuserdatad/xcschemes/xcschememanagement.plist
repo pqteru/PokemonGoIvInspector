@@ -4,37 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AlamofireImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AlamofireNetworkActivityIndicator.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AlamofireObjectMapper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-pokemonGoIvInspector.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PokemonKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,47 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05094CC4A047119F7ADC14EE74C4881C</key>
+		<key>527E730279201DAAE68FA6211007056E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1ECB9129263CA699A82CD641FBF42992</key>
+		<key>C31A540DD6DB56404A28511F9FCEB0D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>228FFC4E78F899B58C33C57F31513A8E</key>
+		<key>D6E3DA4020DEDCBEF58B5C7F41A8A37A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3557CA23AD6791029D227E26466B8198</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B7EAB3F7C5EE4D9C74A6E591D6B431A9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5CBCAA97E951CC882334464FBDF983D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F091BC6B8B8A6F42867307DF82E64078</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
+		<key>E0199D256538DD91D6CFC66A85A3A283</key>
 		<dict>
 			<key>primary</key>
 			<true/>
