@@ -136,6 +136,12 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
         return 100.0
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let managedObject: CalcPkmHistory = frc!.objectAtIndexPath(indexPath) as! CalcPkmHistory
+        moc.deleteObject(managedObject)
+        manager.saveObject()
+    }
+    
     // MARK: - Private
     
     func getPokemonName(name: String) -> String {
