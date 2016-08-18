@@ -141,10 +141,17 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         self.title = "IV Calculator"
         self.tableView.allowsSelection = false
         
+//        setupTableView()
         setupTextField()
         setupToolBar()
         setupAdBanner()
     }
+    
+//    func setupTableView() {
+//        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(actionDone))
+//        self.tableView.addGestureRecognizer(tap)
+//    }
     
     func setupToolBar() {
         
@@ -168,11 +175,11 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         
         pkmsAutoCmpView.frame = CGRectOffset(pkmsAutoCmpView.frame,
                                              CGRectGetMinX(pokemonSelection.frame),
-                                             CGRectGetMaxY(pokemonSelection.frame) + 30)
+                                             CGRectGetMaxY(pokemonSelection.frame))
         pkmsAutoCmpView.hidden = true
         pkmsAutoCmpView.tag = AutoCmpType.Pokemons.rawValue
         pkmsAutoCmpView.autoCmpDelegate = self
-        self.view.addSubview(pkmsAutoCmpView)
+        self.tableView.addSubview(pkmsAutoCmpView)
         
         pokemonSelection.tag = SelectionType.Pokemons.rawValue
         pokemonSelection.delegate = self
@@ -203,9 +210,9 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         // test only
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         #else
-        bannerView.adUnitID = "ca-app-pub-5608297010244358~8687461822"
+        bannerView.adUnitID = "ca-app-pub-5608297010244358/1164195027"
         #endif
-        
+    
         bannerView.rootViewController = self
         bannerView.loadRequest(GADRequest())
     }
@@ -293,10 +300,10 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        log.debug("pkm: \(pkm.moves1)")
+        log.debug("pkm: \(pkm)")
         
-        for move: PokemonMove in pkm.moves1! {
-            log.debug(move.name)
+        for move in pkm.moves1! {
+            log.debug("move.name: \(move.name)")
         }
         
         let cp = Double(self.cpTextField.text!)!
@@ -329,11 +336,11 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         // save to core data
         saveToHistory(pkm.name!, img: (pkm.image ?? "") as String, cp: Int(cp), hp: Int(hp), stardust: Int(dust), powered: Int(isPowered), maxPerf: maxPerf, avgPerf: avgPerf, minPerf: minPerf)
         
-        let move = (pkm.moves1?.first)! as PokemonMove
-        let moveMsg = move.name
+//        let move = (pkm.moves1?.first)! as PokemonMove
+//        let moveMsg = move.name
         
         // show alert
-        let msg = "Max perfection: \(maxPerf)\nAvg perfection: \(avgPerf)\nMin perfection: \(minPerf)\nMove: \(moveMsg)"
+        let msg = "Max perfection: \(maxPerf)\nAvg perfection: \(avgPerf)\nMin perfection: \(minPerf))"
         showPossibilityAlert(sortedAry, message: msg)
     }
     
@@ -402,6 +409,8 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     
     func actionDone() {
         
+        log.debug("")
+        
         self.pokemonSelection.resignFirstResponder()
         self.cpTextField.resignFirstResponder()
         self.hpTextField.resignFirstResponder()
@@ -442,6 +451,12 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
         pkmsAutoCmpView.hidden = true
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        pokemonSelection.resignFirstResponder()
+        return false
+    }
+    
     // MARK: - AutoCompleteDelegate
     
     func autoCmpView(autoCmpView: AutoCompleteView, selectedOpt: AnyObject) {
@@ -477,6 +492,8 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let txt = "\(StarDusts[row])"
+        log.debug("txt: \(txt)")
+        
         self.dustSelection.text = txt
         dustSelection.resignFirstResponder()
     }

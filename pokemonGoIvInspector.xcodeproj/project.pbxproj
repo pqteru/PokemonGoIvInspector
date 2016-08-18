@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A4E97F41D637C5B001D7BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */; };
+		7A5A774C1D660CF30012D723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A5A774B1D660CF30012D723 /* GoogleService-Info.plist */; };
 		7A63BB1F1D5EED920011426C /* UIAlertController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB1E1D5EED920011426C /* UIAlertController+ext.swift */; };
 		7A63BB211D5F0E9A0011426C /* PkmIVCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */; };
 		7A63BB231D5F1B270011426C /* Double+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB221D5F1B270011426C /* Double+ext.swift */; };
@@ -15,7 +16,6 @@
 		7A63BB271D603A420011426C /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A63BB261D603A420011426C /* levels.json */; };
 		7A63BB291D603B080011426C /* PokemonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63BB281D603B080011426C /* PokemonLevel.swift */; };
 		7A7B6FD51D64A3F300FBADAC /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B6FD41D64A3F300FBADAC /* DateUtils.swift */; };
-		7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8476491D622FF50023D7FF /* GoogleService-Info.plist */; };
 		8B1781D81D644433004FDFEF /* CalcPkmHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1781D71D644433004FDFEF /* CalcPkmHistory.swift */; };
 		8B1781DA1D644616004FDFEF /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1781D91D644616004FDFEF /* Property.swift */; };
 		8B1781DD1D64585E004FDFEF /* CalcPkmHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1781DC1D64585E004FDFEF /* CalcPkmHistoryManager.swift */; };
@@ -68,6 +68,7 @@
 /* Begin PBXFileReference section */
 		0DC4D4A7954EAB53FC461572 /* Pods-pokemonGoIvInspector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonGoIvInspector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonGoIvInspector/Pods-pokemonGoIvInspector.debug.xcconfig"; sourceTree = "<group>"; };
 		1065044E7410FF9521F7C54B /* Pods-pokemonGoIvInspector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonGoIvInspector.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonGoIvInspector/Pods-pokemonGoIvInspector.release.xcconfig"; sourceTree = "<group>"; };
+		7A5A774B1D660CF30012D723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A63BB1E1D5EED920011426C /* UIAlertController+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ext.swift"; sourceTree = "<group>"; };
 		7A63BB201D5F0E9A0011426C /* PkmIVCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PkmIVCalc.swift; sourceTree = "<group>"; };
 		7A63BB221D5F1B270011426C /* Double+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+ext.swift"; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		7A63BB261D603A420011426C /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
 		7A63BB281D603B080011426C /* PokemonLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonLevel.swift; sourceTree = "<group>"; };
 		7A7B6FD41D64A3F300FBADAC /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		7A8476491D622FF50023D7FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1781D71D644433004FDFEF /* CalcPkmHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcPkmHistory.swift; sourceTree = "<group>"; };
 		8B1781D91D644616004FDFEF /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 				7AAC4B1D1D62029E00CB18CF /* Assets.xcassets */,
 				8BF0EBF61D5873B600E6B29A /* LaunchScreen.storyboard */,
 				8BF0EBF91D5873B600E6B29A /* Info.plist */,
-				7A8476491D622FF50023D7FF /* GoogleService-Info.plist */,
+				7A5A774B1D660CF30012D723 /* GoogleService-Info.plist */,
 				8BF0EBF11D5873B600E6B29A /* pokemonGoIvInspector.xcdatamodeld */,
 				8BABA6271D63FC120063EA8C /* README.md */,
 			);
@@ -418,10 +418,10 @@
 				7A4E97F41D637C5B001D7BD0 /* Assets.xcassets in Resources */,
 				8BF0EBF81D5873B600E6B29A /* LaunchScreen.storyboard in Resources */,
 				8B2305411D5DC7500063FC57 /* pokemon.json in Resources */,
-				7A84764A1D622FF50023D7FF /* GoogleService-Info.plist in Resources */,
 				8B7437D51D61BC3000288716 /* PkmStatsHeader.xib in Resources */,
 				8B7437D11D61B88C00288716 /* PkmStatsCell.xib in Resources */,
 				8BF0EBF01D5873B600E6B29A /* Main.storyboard in Resources */,
+				7A5A774C1D660CF30012D723 /* GoogleService-Info.plist in Resources */,
 				7A63BB271D603A420011426C /* levels.json in Resources */,
 				7A63BB251D602AC80011426C /* level-to-cpm.json in Resources */,
 			);
@@ -665,14 +665,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Hsuan Chen (GD797WXQT7)";
 				CURRENT_PROJECT_VERSION = 7;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e2927226-0a52-49d8-ab97-f38cad87f9ee";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -683,14 +683,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Hsuan Chen (GD797WXQT7)";
 				CURRENT_PROJECT_VERSION = 7;
 				INFOPLIST_FILE = pokemonGoIvInspector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqteru.pokemonGoIvInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e2927226-0a52-49d8-ab97-f38cad87f9ee";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

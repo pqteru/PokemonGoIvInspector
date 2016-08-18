@@ -31,11 +31,11 @@ class PokemonMove: Mappable {
     
     func mapping(map: Map) {
         
-        id  <- map["id"]
-        name <- map["name"]
-        power <- map["power"]
-        durationMs <- map["durationMs"]
-        energy <- map["energy"]
-        dps <- map["dps"]
+        id  <- map["Id"]
+        name <- map["Name"]
+        power <- map["Power"]
+        durationMs <- map["DurationMs"]
+        energy <- map["Energy"]
+        dps <- map["DPS"]
     }
 }

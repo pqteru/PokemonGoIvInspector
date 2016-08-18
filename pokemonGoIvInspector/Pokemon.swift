@@ -9,7 +9,7 @@
 import ObjectMapper
 
 class Pokemon: Mappable {
-    
+
     var id: Int?
     var name: String?
     var type1: String?
@@ -35,3 +35,4 @@ class Pokemon: Mappable {
         moves2 <- map["moves2"]
     }
 }
+
