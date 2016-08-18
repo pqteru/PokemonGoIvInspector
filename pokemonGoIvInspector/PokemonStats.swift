@@ -30,9 +30,9 @@ class PokemonStats {
         let total = getMaxAtk() + getMaxDef() + getMaxSta();
         
         let pref = Double(current)/Double(total)
-        //log.debug("pref: \(pref))")
+        log.debug("pref: \(pref))")
         
-        return pref.roundToPlaces(2)
+        return pref.roundToPlaces(4)
     }
     
     func getMaxAtk() -> Int {

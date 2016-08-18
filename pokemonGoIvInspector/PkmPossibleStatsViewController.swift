@@ -49,6 +49,8 @@ class PkmPossibleStatsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! PkmStatsCell
         let pkmStats = dataSource![indexPath.row]
         configureCell(cell, pokemonStats: pkmStats)
+        // cell background color
+        cell.backgroundColor = indexPath.row % 2 == 1 ? UIColor(netHex:0xE0E0E0) : UIColor.clearColor()
         return cell
     }
     

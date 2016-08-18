@@ -94,7 +94,13 @@ class PkmIVCalc {
     func getPossibleStaIvs(baseSta: Int, totalCpM: Double, hp: Int) -> [Int]? {
         
         var ary = [Int]()
-        var estSta = Int(floor(Double(hp) / totalCpM - Double(baseSta)))
+        
+        let x = Double(hp) / totalCpM - Double(baseSta)
+        log.debug("v: \(x)")
+        
+        // if less than 0 will equal to 0
+        var estSta = abs(Int(floor(x < 0 ? 0 : x)))
+        log.debug("estSta: \(estSta)")
         
         // (baseStamina + IndSta) * TCpM >= hp
         while Int((Double(baseSta) + Double(estSta)) * totalCpM) < hp+1 &&
@@ -118,7 +124,7 @@ class PkmIVCalc {
         
         var ary = readPKMLevelsJson(dust)
         if ary?.count > 0 && isPowered == false {
-            // 移除 .5 lv
+            // if the pokemon has powered up, remove .5 lv
             ary?.removeAtIndex(1)
             ary?.removeLast()
         }
@@ -143,7 +149,7 @@ class PkmIVCalc {
         let avg = total / Double(ary.count)
         log.debug("ary.count: \(ary.count)")
         
-        return avg.roundToPlaces(2)
+        return avg.roundToPlaces(4)
     }
     
     func getPrefPercentageStr(pref: Double) -> String {
