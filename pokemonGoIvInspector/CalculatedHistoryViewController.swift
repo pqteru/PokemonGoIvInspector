@@ -127,13 +127,14 @@ class CalculatedHistoryViewController: UITableViewController, NSFetchedResultsCo
         cell.labelStardust.text = String("Stardust: \(record.stardust)")
         cell.labelPowered.text = String("Powered: \(Bool(record.powered) == false ? "NO" : "YES")")
         
-        let str = "Max: \(record.maxPerf) Avg: \(record.avgPerf) Min: \(record.minPerf)"
-        cell.labelPerf.text = str
+        cell.labelMaxPerf.text = "Max: \(record.maxPerf)"
+        cell.labelAvgPerf.text = "Avg: \(record.avgPerf)"
+        cell.labelMinPerf.text = "Min: \(record.minPerf)"
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 100.0
+        return 120.0
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
