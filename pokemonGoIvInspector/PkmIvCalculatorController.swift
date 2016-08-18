@@ -199,8 +199,12 @@ class PkmIvCalculatorController: UITableViewController, UITextFieldDelegate, Aut
                                         CGRectGetHeight(self.view.frame) - CGRectGetHeight(bannerView.frame))
         self.navigationController?.view.addSubview(bannerView)
         
+        #if DEBUG
         // test only
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        #else
+        bannerView.adUnitID = "ca-app-pub-5608297010244358~8687461822"
+        #endif
         
         bannerView.rootViewController = self
         bannerView.loadRequest(GADRequest())

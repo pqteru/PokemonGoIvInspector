@@ -12,8 +12,8 @@ import CoreData
 @objc(CalcPkmHistoryManager)
 class CalcPkmHistoryManager: BaseManager {
     
-    // 20 rows only
-    static let maxLimit = 20
+    // 30 rows only
+    static let maxLimit = 30
     
     static let sharedInstance = CalcPkmHistoryManager()
     
